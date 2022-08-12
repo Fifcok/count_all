@@ -1,3 +1,3 @@
-[count.all.pl](https://count.all.com)
+[countall.com.pl](https://countall.com.pl)
 
 Calculators for flights, powerplants and Binary switches
