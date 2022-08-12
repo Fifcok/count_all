@@ -1,103 +1,103 @@
 .body_my {
-	background: url('../img/background.jpg') no-repeat center center fixed;
-	-webkit-background-size: cover;
-	-moz-background-size: cover;
-	-o-background-size: cover;
-	background-size: cover;
+  background: url('../img/background.jpg') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 
 #calc_form {
-	padding: 10px;
+  padding: 10px;
 }
 
 .wrapper_container_my {
-	background-color: white;
+  background-color: white;
 }
 
 .link_my {
-	text-decoration: none;
-	color: red;
+  text-decoration: none;
+  color: red;
 }
 
 .image_my {
-	padding: 5px;
-	transition: transform .5s;
+  padding: 5px;
+  transition: transform .5s;
 }
 
 .image_my:hover {
-	transform: scale(1.1);
+  transform: scale(1.1);
 }
 
 .link_my:hover {
-	color: #A52A2A;
+  color: #A52A2A;
 }
 
 .index_headwind {
-	text-decoration: none;
-	background: url('../img/headwind.png') no-repeat center center;
-	background-size: 47px 47px;
-	padding: 5px;
+  text-decoration: none;
+  background: url('../img/headwind.png') no-repeat center center;
+  background-size: 47px 47px;
+  padding: 5px;
 }
 
 .index_headwind:hover {
-	background: url('../img/headwind_hover.png') no-repeat center center;
-	background-size: 47px 47px;
-	background-color: rgba(0, 0, 0, 0.2);
+  background: url('../img/headwind_hover.png') no-repeat center center;
+  background-size: 47px 47px;
+  background-color: rgba(0, 0, 0, 0.2);
 }
 
 .index_slope {
-	text-decoration: none;
-	background: url('../img/slope.png') no-repeat center center;
-	background-size: 47px 47px;
-	padding: 5px;
+  text-decoration: none;
+  background: url('../img/slope.png') no-repeat center center;
+  background-size: 47px 47px;
+  padding: 5px;
 }
 
 .index_slope:hover {
-	background: url('../img/slope_hover.png') no-repeat center center;
-	background-size: 47px 47px;
-	background-color: rgba(0, 0, 0, 0.2);
+  background: url('../img/slope_hover.png') no-repeat center center;
+  background-size: 47px 47px;
+  background-color: rgba(0, 0, 0, 0.2);
 }
 
 .index_isa {
-	text-decoration: none;
-	background: url('../img/isa.png') no-repeat center center;
-	background-size: 47px 47px;
-	padding: 5px;
+  text-decoration: none;
+  background: url('../img/isa.png') no-repeat center center;
+  background-size: 47px 47px;
+  padding: 5px;
 }
 
 .index_isa:hover {
-	background: url('../img/isa_hover.png') no-repeat center center;
-	background-size: 47px 47px;
-	background-color: rgba(0, 0, 0, 0.2);
+  background: url('../img/isa_hover.png') no-repeat center center;
+  background-size: 47px 47px;
+  background-color: rgba(0, 0, 0, 0.2);
 }
 
 .index_prad {
-	text-decoration: none;
-	background: url('../img/prad.png') no-repeat center center;
-	background-size: 47px 47px;
-	padding: 5px;
+  text-decoration: none;
+  background: url('../img/prad.png') no-repeat center center;
+  background-size: 47px 47px;
+  padding: 5px;
 }
 
 .index_prad:hover {
-	background: url('../img/prad_hover.png') no-repeat center center;
-	background-size: 47px 47px;
-	background-color: rgba(0, 0, 0, 0.2);
+  background: url('../img/prad_hover.png') no-repeat center center;
+  background-size: 47px 47px;
+  background-color: rgba(0, 0, 0, 0.2);
 }
 
 .index_fuel {
-	text-decoration: none;
-	background: url('../img/fuel.png') no-repeat center center;
-	background-size: 47px 47px;
-	padding: 5px;
+  text-decoration: none;
+  background: url('../img/fuel.png') no-repeat center center;
+  background-size: 47px 47px;
+  padding: 5px;
 }
 
 .index_fuel:hover {
-	background: url('../img/fuel_hover.png') no-repeat center center;
-	background-size: 47px 47px;
-	background-color: rgba(0, 0, 0, 0.2);
+  background: url('../img/fuel_hover.png') no-repeat center center;
+  background-size: 47px 47px;
+  background-color: rgba(0, 0, 0, 0.2);
 }
 
 .index_kafelek {
-	color: black;
-	font-size: 20px;
+  color: black;
+  font-size: 20px;
 }
