@@ -63,7 +63,7 @@
 				</div>
 
 				<div class="row">
-					<a class="col-md-2 index_prad image_my" href="bin2dip.php">
+					<a class="col-md-2 index_dip image_my" href="bin2dip.php">
 						<p class="text-center index_kafelek">DIP Switch</p>
 					</a>
 				</div>
