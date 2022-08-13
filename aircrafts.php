@@ -42,6 +42,7 @@
 								</optgroup>
 								<optgroup label="Airbus">
 									<option value="A320">A320</option>
+									<option value="A321">A321</option>
 								</optgroup>
 							</select>
 						</div>
@@ -51,16 +52,23 @@
 						</div>
 
 						<div class="row" id="calc_form">
-							<b>
-								<p name="result" id="dlugosc"></p>
-								<p name="result" id="szerokosc"></p>
-								<p name="result" id="wysokosc"></p>
-								<p name="result" id="silniki"></p>
-								<p name="result" id="mtow"></p>
-								<p name="result" id="zasieg"></p>
-								<p name="result" id="predkosc"></p>
-								<p name="result" id="pasazerowie"></p>
-							</b>
+							<p class="bold one_line" name="result" id="dlugosc"></p>
+							<p class="one_line" name="result" id="dlugosc_value"></p>
+							<p class="bold one_line" name="result" id="szerokosc"></p>
+							<p class="one_line" name="result" id="szerokosc_value"></p>
+							<p class="bold one_line" name="result" id="wysokosc"></p>
+							<p class="one_line" name="result" id="wysokosc_value"></p>
+							<p class="bold one_line" name="result" id="silniki"></p>
+							<p class="one_line" name="result" id="silniki_value"></p>
+							<p class="bold one_line" name="result" id="mtow"></p>
+							<p class="one_line" name="result" id="mtow_value"></p>
+							<p class="bold one_line" name="result" id="zasieg"></p>
+							<p class="one_line" name="result" id="zasieg_value"></p>
+							<p class="bold one_line" name="result" id="predkosc"></p>
+							<p class="one_line" name="result" id="predkosc_value"></p>
+							<p class="bold one_line" name="result" id="pasazerowie"></p>
+							<p class="one_line" name="result" id="pasazerowie_value"></p>
+							<br /><br /><br /><br />
 						</div>
 					</form>
 
