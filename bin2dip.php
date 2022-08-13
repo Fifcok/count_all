@@ -36,7 +36,7 @@
 						<form id="calculator" name="picform" action="javascript:initPic(this.form);">
 							<h3>Docelowy adres</h3>
 							<div class="row" id="calc_form">
-								<input type="number" name="picnum" placeholder="Wpisz adres  (0 - 511)" min="0" max="511" style="width: 200px;" required />
+								<input type="number" name="picnum" id="range" placeholder="Wpisz adres  (0 - 511)" min="0" max="511" style="width: 200px;" required />
 							</div>
 
 							<div class="row" id="calc_form">

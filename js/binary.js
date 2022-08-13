@@ -42,10 +42,19 @@ var maxlength = decToBin(max).toString().length;
 d = /^\d+$/;
 
 function initPic(a) {
-  p = a.picnum.value;
-  p /= 1;
-  p > max ? (alert("Wartośćh przekracza zakres 511"), a.picnum.focus(), a.picnum.select()) : showPic(p);
-  return !1
+
+  var range = document.getElementById('range').value;
+alert (range);
+  if (range < 0 || range > 511)
+  {
+    alert("Wartośćh przekracza zakres (0 - 511)");
+  } else {
+
+    p = a.picnum.value;
+    p /= 1;
+    p > max ? (alert("Wartośćh przekracza zakres 511"), a.picnum.focus(), a.picnum.select()) : showPic(p);
+    return !1
+  }
 }
 
 function chgPic(a, b) {
