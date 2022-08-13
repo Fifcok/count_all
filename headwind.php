@@ -11,7 +11,7 @@
 	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6199309078483888" crossorigin="anonymous"></script>
 </head>
 
-<body class="body_my">
+<body class="body_my"> 
 	<div class="wrapper container wrapper_container_my">
 		<div class="row">
 			<?php

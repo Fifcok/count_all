@@ -44,7 +44,6 @@ d = /^\d+$/;
 function initPic(a) {
 
   var range = document.getElementById('range').value;
-alert (range);
   if (range < 0 || range > 511)
   {
     alert("Wartośćh przekracza zakres (0 - 511)");
