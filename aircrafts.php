@@ -76,7 +76,7 @@
 
 					<div class="col-md-9">
 
-						<img id="foto" class='col-md-12' src="">
+						<img id="foto" class='col-md-12' style="border-radius: 5%;" src="">
 
 						<br /><br />
 					</div>
