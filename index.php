@@ -42,6 +42,9 @@
 					<a class="col-md-2 index_fuel image_my" href="fuel_weight.php">
 						<p class="text-center index_kafelek">Paliwo Jet A</p>
 					</a>
+					<a class="col-md-2 index_aircraft image_my" href="aircrafts.php">
+						<p class="text-center index_kafelek">Samoloty</p>
+					</a>
 				</div>
 
 				<hr>

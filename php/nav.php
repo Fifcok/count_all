@@ -16,6 +16,7 @@ echo "	<nav class='navbar navbar-light'>
 			<li><a class='dropdown-item' href='rwyslope.php'>Runway slope</a></li>
 			<li><a class='dropdown-item' href='isa.php'>ISA / ISA DEV</a></li>
 			<li><a class='dropdown-item' href='fuel_weight.php'>Paliwo Jet A</a></li>
+			<li><a class='dropdown-item' href='aircrafts.php'>Samoloty</a></li>
 		</ul>
 	</div>
 

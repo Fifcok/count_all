@@ -110,6 +110,19 @@
   background-color: rgba(0, 0, 0, 0.2);
 }
 
+.index_aircraft {
+  text-decoration: none;
+  background: url('../img/aircraft.png') no-repeat center center;
+  background-size: 115px 47px;
+  padding: 5px;
+}
+
+.index_aircraft:hover {
+  background: url('../img/aircraft_hover.png') no-repeat center center;
+  background-size: 115px 47px;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
 .index_kafelek {
   color: black;
   font-size: 20px;
