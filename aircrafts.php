@@ -97,7 +97,7 @@
 									<option value="A35K">A350-1000 (A35K)</option>
 									<option value="A388">A380-800 (A388)</option>
 								</optgroup>
-								<!--Emrayer-->
+								<!--Embrayer-->
 								<optgroup label="Embrayer">
 									<option value="E170">E170 (E170)</option>
 									<option value="E175">E175 (E175)</option>
