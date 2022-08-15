@@ -40,7 +40,6 @@
 
 								<!--Boeing-->
 								<optgroup label="Boeing">
-								<!--
 								<option value="B703">B707-320B (B703)</option>
 								<option value="B712">B717-200HGW (B712)</option>
 								<option value="B722">B727-200ADV (B722)</option>
@@ -54,9 +53,7 @@
 								<option value="B735">B737-500 (B735)</option>
 								<option value="B736">B737-600 (B736)</option>
 								<option value="B737">B737-700 (B737)</option>
-								-->
-									<option value="B738">B737-800 (B738)</option>
-								<!--
+								<option value="B738">B737-800 (B738)</option>
 								<option value="B739">B737-900 (B739)</option>
 								<option value="B744">B747-400 (B744)</option>
 								<option value="B748">B747-800 (B748)</option>
@@ -73,7 +70,6 @@
 								<option value="B788">B787-8 (B788)</option>
 								<option value="B789">B787-9 (B789)</option>
 								<option value="B78X">B787-10 (B78X)</option>
-								-->
 								</optgroup>
 								<!--Airbus-->
 								<optgroup label="Airbus">
