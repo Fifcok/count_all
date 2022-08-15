@@ -46,7 +46,7 @@
 								<option value="B37M">B737 MAX 7 (B37M)</option>
 								<option value="B38M">B737 MAX 8 (B38M)</option>
 								<option value="B39M">B737 MAX 9 (B39M)</option>
-								<option value="B3XM">B737 MAX10 (B3XM)</option>
+								<option value="B3XM">B737 MAX 10 (B3XM)</option>
 								<option value="B732">B737-200 (B732)</option>
 								<option value="B733">B737-300 (B733)</option>
 								<option value="B734">B737-400 (B734)</option>
