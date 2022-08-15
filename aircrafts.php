@@ -37,7 +37,6 @@
 
 						<div class="row" id="calc_form">
 							<select type="text" name="typ" id="typ">
-
 								<!--Boeing-->
 								<optgroup label="Boeing">
 									<option value="B703">B707-320B (B703)</option>
@@ -127,7 +126,7 @@
 						</div>
 
 						<div class="row" id="calc_form">
-							<button type="button" onclick="aircraft(this.innerHTML)" style="width: 100px;">Pokaż</button>
+							<input type="button" onclick="aircraft(this.innerHTML)" value="Pokaż" style="width: 100px;">
 						</div>
 
 						<div class="row" id="calc_form">
