@@ -37,9 +37,12 @@
 
 						<div class="row" id="calc_form">
 							<select type="text" name="typ" id="typ">
+
+								<!--Boeing-->
 								<optgroup label="Boeing">
 									<option value="B738">B737-800 (B738)</option>
 								</optgroup>
+								<!--Airbus-->
 								<optgroup label="Airbus">
 									<option value="A221">A220-100 (A221)</option>
 									<option value="A223">A220-300 (A223)</option>
@@ -64,6 +67,32 @@
 									<option value="A359">A350-900 (A359)</option>
 									<option value="A35K">A350-1000 (A35K)</option>
 									<option value="A388">A380-800 (A388)</option>
+								</optgroup>
+								<!--Emrayer-->
+								<optgroup label="Embrayer">
+									<option value="E170">E170 (E170)</option>
+									<option value="E175">E175 (E175)</option>
+									<option value="E190">E190 (E190)</option>
+									<option value="E195">E195 (E195)</option>
+								</optgroup>
+								<!--McDonnel Douglas-->
+								<optgroup label="McDonnel Douglas">
+									<option value="DC10">DC-10-30 (DC10)</option>
+									<option value="DC91">DC-9-30 (DC91)</option>
+									<option value="MD11">MD-11 (MD11)</option>
+								</optgroup>
+								<!--Comac-->
+								<optgroup label="Comac">
+									<option value="AJ27">ARJ21-700 (AJ27)</option>
+									<option value="AJ29">ARJ21-900 (AJ29)</option>
+								</optgroup>
+								<!--Sukhoi-->
+								<optgroup label="Sukhoi">
+									<option value="SU1">SSJ-100-90 (SU1)</option>
+								</optgroup>
+								<!--Lockheed-->
+								<optgroup label="Lockheed">
+									<option value="L101">L-1011 TriStar 500 (L101)</option>
 								</optgroup>
 							</select>
 						</div>

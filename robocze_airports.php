@@ -6,7 +6,7 @@
 
 <?php
 
-include ('/php/config.php');
+include ('php/config.php');
 
 if (isset($_POST['searchbutton'])) {
 
