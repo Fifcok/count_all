@@ -127,7 +127,7 @@
 						</div>
 
 						<div class="row" id="calc_form">
-							<button type="button" onclick="aircraft(this.innerHTML)" style="width: 100px;">Pokaż</button>
+							<input type="button" onclick="aircraft(this.innerHTML)" value="Pokaż" style="width: 100px;">
 						</div>
 
 						<div class="row" id="calc_form">
