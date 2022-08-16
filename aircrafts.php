@@ -37,9 +37,9 @@
 						</div>
 
 						<div class="row" id="calc_form">
-							<select data-live-search="true" type="text" name="typ" id="typ">
+							<input class="form-control" list="datalistOptions" id="typ" placeholder="Wpisz, żeby wyszukać...">
+							<datalist id="datalistOptions">
 								<!--Boeing-->
-								<optgroup label="Boeing">
 									<option value="B703">B707-320B (B703)</option>
 									<option value="B712">B717-200HGW (B712)</option>
 									<option value="B722">B727-200ADV (B722)</option>
@@ -70,9 +70,7 @@
 									<option value="B788">B787-8 (B788)</option>
 									<option value="B789">B787-9 (B789)</option>
 									<option value="B78X">B787-10 (B78X)</option>
-								</optgroup>
 								<!--Airbus-->
-								<optgroup label="Airbus">
 									<option value="A221">A220-100 (A221)</option>
 									<option value="A223">A220-300 (A223)</option>
 									<option value="A306">A300-600 (A306)</option>
@@ -96,34 +94,24 @@
 									<option value="A359">A350-900 (A359)</option>
 									<option value="A35K">A350-1000 (A35K)</option>
 									<option value="A388">A380-800 (A388)</option>
-								</optgroup>
 								<!--Embrayer-->
-								<optgroup label="Embrayer">
 									<option value="E170">E170 (E170)</option>
 									<option value="E175">E175 (E175)</option>
 									<option value="E190">E190 (E190)</option>
 									<option value="E195">E195 (E195)</option>
-								</optgroup>
 								<!--McDonnel Douglas-->
-								<optgroup label="McDonnel Douglas">
 									<option value="DC10">DC-10-30 (DC10)</option>
 									<option value="DC91">DC-9-30 (DC91)</option>
 									<option value="MD11">MD-11 (MD11)</option>
-								</optgroup>
 								<!--Comac-->
-								<optgroup label="Comac">
 									<option value="AJ27">ARJ21-700 (AJ27)</option>
 									<option value="AJ29">ARJ21-900 (AJ29)</option>
-								</optgroup>
 								<!--Sukhoi-->
-								<optgroup label="Sukhoi">
 									<option value="SU1">SSJ-100-90 (SU1)</option>
-								</optgroup>
 								<!--Lockheed-->
-								<optgroup label="Lockheed">
 									<option value="L101">L-1011 TriStar 500 (L101)</option>
-								</optgroup>
-							</select>
+							</datalist>
+
 						</div>
 
 						<div class="row" id="calc_form">
