@@ -2,8 +2,8 @@
 <html lang="pl-PL">
 <head>
 	<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
-	<script src="bootstrap/js/bootstrap.min.js"></script>
 	<script src='https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js'></script>
+	<script src="bootstrap/js/bootstrap.min.js"></script>
 	<link rel="stylesheet" href="css/my_css.css">
 	<title>countALL</title>
 	<link rel="icon" type="image/x-icon" href="img/favicon.ico">
