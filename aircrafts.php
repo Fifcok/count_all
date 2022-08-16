@@ -2,9 +2,9 @@
 <html lang="pl-PL">
 
 <head>
-	<link href='https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css' rel='stylesheet'>
+	<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+	<script src="bootstrap/js/bootstrap.min.js"></script>
 	<script src='https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js'></script>
-	<script src='https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js' integrity='sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT' crossorigin='anonymous'></script>
 	<link rel="stylesheet" href="css/my_css.css">
 	<script src="js/script.js"></script>
 	<script src="js/aircrafts.js"></script>
@@ -14,6 +14,7 @@
 </head>
 
 <body class="body_my">
+
 	<div class="wrapper container wrapper_container_my">
 		<div class="row">
 			<?php
@@ -36,7 +37,7 @@
 						</div>
 
 						<div class="row" id="calc_form">
-							<select type="text" name="typ" id="typ">
+							<select data-live-search="true" type="text" name="typ" id="typ">
 								<!--Boeing-->
 								<optgroup label="Boeing">
 									<option value="B703">B707-320B (B703)</option>
