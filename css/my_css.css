@@ -22,10 +22,12 @@
 .image_my {
   padding: 5px;
   transition: transform .5s;
+  filter: grayscale(100%);
 }
 
 .image_my:hover {
   transform: scale(1.1);
+  filter: none;
 }
 
 .link_my:hover {
