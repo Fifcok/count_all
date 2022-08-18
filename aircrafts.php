@@ -37,7 +37,7 @@
 						</div>
 
 						<div class="row" id="calc_form">
-							<input class="form-control" list="datalistOptions" id="typ" placeholder="Wpisz, żeby wyszukać...">
+							<input onfocus="this.value=''" class="form-control" list="datalistOptions" id="typ" placeholder="Wpisz, żeby wyszukać...">
 							<datalist id="datalistOptions">
 								<!--Boeing-->
 									<option value="B703">B707-320B</option>

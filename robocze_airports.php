@@ -5,17 +5,20 @@
 	<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
 	<script src='https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js'></script>
 	<script src="bootstrap/js/bootstrap.min.js"></script>
+	<script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+
 	<link rel="stylesheet" href="css/my_css.css">
 	<script src="js/script.js"></script>
 	<script src="js/aircrafts.js"></script>
 	<title>countALL Aircrafts</title>
 	<link rel="icon" type="image/x-icon" href="img/favicon.ico">
 	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6199309078483888" crossorigin="anonymous"></script>
+
 </head>
 
 <form method="post">
 
-	<input class="form-control" list="ICAOs" name="ICAOs" id="typ" placeholder="Wpisz ICAO, żeby wyszukać...">
+	<input onfocus="this.value=''" class="form-control" list="ICAOs" name="ICAOs" id="typ" placeholder="Wpisz ICAO, żeby wyszukać...">
 	<datalist id="ICAOs">
 
 		<?php
@@ -69,7 +72,7 @@ if (mysqli_num_rows($airports) == 0) {
    echo "<script type='text/javascript'>alert('Nie znaleziono lotniska')</script>";
 } else {
 
-echo "<table style='width: 700px; border: 1px solid; border-collapse: collapse;'><tr><th>ICAO</th><th>Town</th><th>Name</th><th>Elevation</th></tr>";
+echo "<table style='width: 100%; border: 1px solid; border-collapse: collapse;'><tr><th>ICAO</th><th>Town</th><th>Name</th><th>Elevation</th></tr>";
 if (!$airports){
 die("MYSQL Error: error");
 }
@@ -94,7 +97,7 @@ echo "</table>";
 if (isset($_POST['searchbutton'])) {
 if (mysqli_num_rows($runways) != 0) {
 
-  echo "<table style='width: 700px; border: 1px solid; border-collapse: collapse;'><tr><th>Pasy</th><th>True HDG</th><th>Wysokości progów</th><th>Długość</th><th>Szerokość</th></tr>";
+  echo "<table style='width: 100%; border: 1px solid; border-collapse: collapse;'><tr><th>Pasy</th><th>True HDG</th><th>Wysokości progów</th><th>Długość</th><th>Szerokość</th></tr>";
 if ( !$runways ){
 die("MYSQL Error: error");
 }
@@ -116,7 +119,7 @@ if (isset($_POST['searchbutton'])) {
 
 if (mysqli_num_rows($freq) != 0) {
 
-  echo "<table style='width: 700px; border: 1px solid; border-collapse: collapse;'><tr><th>Typ</th><th>Opis</th><th>Częstotliwość</th></tr>";
+  echo "<table style='width: 100%; border: 1px solid; border-collapse: collapse;'><tr><th>Typ</th><th>Opis</th><th>Częstotliwość</th></tr>";
 if ( !$freq ){
 die("MYSQL Error: error");
 }
@@ -140,8 +143,7 @@ if (isset($_POST['searchbutton'])) {
 	echo "
 
 <iframe style='pointer-events: none; border-radius: 5px;' src='https://metar-taf.com/embed/{$airport}?bg_color=0057a3&layout=landscape'
-frameBorder='0' width='366'
-height='255' scrolling='no'></iframe>
+frameBorder='0' width='100%' height='255' scrolling='no'></iframe>
 ";
 }
 }
@@ -153,7 +155,7 @@ height='255' scrolling='no'></iframe>
 
 if (isset($_POST['searchbutton'])) {
 	if (mysqli_num_rows($airports) != 0){
-
+		echo "$latitude, $longitude ";
 		echo "<a href='https://skyvector.com/?ll={$latitude},{$longitude}&chart=301&zoom=2' target='blank'>SkyVector</a>";
 }
 }
