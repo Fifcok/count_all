@@ -7,7 +7,7 @@
 	<script src="bootstrap/js/bootstrap.min.js"></script>
 	<link rel="stylesheet" href="css/my_css.css">
 	<script src="js/script.js"></script>
-	<title>countALL Fuel</title>
+	<title>countALL Airports</title>
 	<link rel="icon" type="image/x-icon" href="img/favicon.ico">
 	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6199309078483888" crossorigin="anonymous"></script>
 </head>
@@ -30,9 +30,6 @@
 				<div class="row">
 					<form method="post" id="calculator" class="col-md-3">
 						<h3>Lotniska</h3>
-						<div class="row" id="calc_form">
-							Wybierz ICAO lotniska
-						</div>
 
 						<div class="row" id="calc_form">
 							<input onfocus="this.value=''" class="form-control" list="ICAOs" name="ICAOs" id="typ" placeholder="Wpisz ICAO, żeby wyszukać...">
@@ -74,7 +71,6 @@
 
 					    echo "</datalist>";
 
-
 					    ?>
 						</diV>
 
@@ -95,21 +91,21 @@
 						   echo "<script type='text/javascript'>alert('Nie znaleziono lotniska')</script>";
 						} else {
 
-						echo "<table style='text-align: center; width: 100%; border: 1px solid; border-collapse: collapse;'><tr><th>ICAO</th><th>Town</th><th>Name</th><th>Elevation</th></tr>";
 						if (!$airports){
 						die("MYSQL Error: error");
 						}
 
 						while($row_airports = $airports->fetch_assoc()) {
+							echo "<h2>{$row_airports['ICAO']} - {$row_airports['name']}</h2>";
+							echo "<h3>{$row_airports['town']}</h3>";
 
-							echo "<tr style='text-align: center;'><td>{$row_airports['ICAO']}</td><td>{$row_airports['town']}</td><td>{$row_airports['name']}</td><td>{$row_airports['elevation']} ft</td></tr>";
+							$elevation_meters = $row_airports['elevation'] * "0.3048";
+							$elevation_meters_round = round($elevation_meters, 0);
+							echo "<b>Wysokość:</b> {$row_airports['elevation']} ft ({$elevation_meters_round} m) <br /><br />";
 
-							$latitude = $row_airports['latitude'];
-							$longitude = $row_airports['longitude'];
-
+							echo "<b>Koordynaty:</b> {$row_airports['latitude']}, {$row_airports['longitude']} <br />";
+							echo "<a href='https://skyvector.com/?ll={$row_airports['latitude']},{$row_airports['longitude']}&chart=301&zoom=2' target='blank' class='link_my'>SkyVector</a><br />";
 							}
-
-						echo "</table>";
 						}
 						}
 						?>
@@ -119,68 +115,60 @@
 						<?php
 						if (isset($_POST['searchbutton'])) {
 						if (mysqli_num_rows($runways) != 0) {
-
-						  echo "<table style='text-align: center; width: 100%; border: 1px solid; border-collapse: collapse;'><tr><th>Pasy</th><th>True HDG</th><th>Wysokości progów</th><th>Długość</th><th>Szerokość</th></tr>";
+							echo "<div class='row'>";
+							echo "<h3>Informacje o pasach</h3>";
+						  echo "<table style='text-align: center; width: 100%;'><tr><th>Pasy</th><th>True HDG</th><th>Wysokości progów</th><th>Rozmiar pasa</th></tr>";
 						if ( !$runways ){
 						die("MYSQL Error: error");
 						}
 
 						while($row_runways = $runways->fetch_assoc() ) {
 
-						  echo "<tr style='text-align: center;'><td>{$row_runways['rwy1']} / {$row_runways['rwy2']}</td><td>{$row_runways['rwy1_hdg']} / {$row_runways['rwy2_hdg']}</td><td>{$row_runways['rwy1_elevation']} / {$row_runways['rwy2_elevation']}ft</td><td>{$row_runways['lenght']}ft</td><td>{$row_runways['width']}ft</td></tr>";
+						$lenght	= $row_runways['lenght'] * "0.3048";
+						$lenght_round = round($lenght, 0);
+						$width	= $row_runways['width'] * "0.3048";
+						$width_round = round($width, 0);
+
+						  echo "<tr style='text-align: center;'><td>{$row_runways['rwy1']} / {$row_runways['rwy2']}</td><td>{$row_runways['rwy1_hdg']} / {$row_runways['rwy2_hdg']}</td><td>{$row_runways['rwy1_elevation']} / {$row_runways['rwy2_elevation']}ft</td><td>{$row_runways['lenght']} x {$row_runways['width']}ft ({$lenght_round} x {$width_round} m)</td></tr>";
 							}
 
 						echo "</table>";
+						echo "</div>";
 						}
 						}
 						?>
-
-						<br />
-
-						<?php
-						if (isset($_POST['searchbutton'])) {
-
-						if (mysqli_num_rows($freq) != 0) {
-
-						  echo "<table style='text-align: center; width: 100%; border: 1px solid; border-collapse: collapse;'><tr><th>Typ</th><th>Opis</th><th>Częstotliwość</th></tr>";
-						if ( !$freq ){
-						die("MYSQL Error: error");
-						}
-
-						while($row_freq = $freq->fetch_assoc() ) {
-
-						  echo "<tr style='text-align: center;'><td>{$row_freq['type']}</td><td>{$row_freq['description']}</td><td>{$row_freq['mhz']} MHz</td></tr>";
-							}
-
-						echo "</table>";
-						}
-						}
-						?>
-
-						<br />
 
 						<?php
 						if (isset($_POST['searchbutton'])) {
 							if (mysqli_num_rows($airports) != 0){
 
-							echo "<iframe style='pointer-events: none; border-radius: 5px;' src='https://metar-taf.com/embed/{$airport}?bg_color=0057a3&layout=landscape'
+							echo "<iframe style='margin: 20px 0px; pointer-events: none; border-radius: 10px;' src='https://metar-taf.com/embed/{$airport}?bg_color=0057a3&layout=landscape'
 						frameBorder='0' width='100%' height='255' scrolling='no'></iframe>";
 						}
 						}
 						?>
 
-						<br />
-
 						<?php
-
 						if (isset($_POST['searchbutton'])) {
-							if (mysqli_num_rows($airports) != 0){
-								echo "$latitude, $longitude ";
-								echo "<a href='https://skyvector.com/?ll={$latitude},{$longitude}&chart=301&zoom=2' target='blank'>SkyVector</a>";
-						}
+
+						if (mysqli_num_rows($freq) != 0) {
+						echo "<h3>Radio</h3>";
+						if ( !$freq ){
+						die("MYSQL Error: error");
 						}
 
+						while($row_freq = $freq->fetch_assoc() ) {
+							echo "<div class='row'>";
+						  echo "<div class='col-md-1'><p><b>{$row_freq['type']}</b></p></div>";
+							echo "<div class='col-md-3'><p style='margin-bottom: 0px;'>{$row_freq['mhz']} MHz</p><p style='margin-bottom: 10px; color: #cbcbcb; font-style: italic;'>{$row_freq['description']}</p></div>";
+							echo "</div>";
+							}
+
+						echo "</table>";
+						}
+						}
 						?>
+
 						<br /><br /><br /><br />
 
 					</div>

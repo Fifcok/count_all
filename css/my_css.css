@@ -97,6 +97,19 @@
   background-color: rgba(0, 0, 0, 0.2);
 }
 
+.index_airports {
+  text-decoration: none;
+  background: url('../img/airports.png') no-repeat center center;
+  background-size: 70px 70px;
+  padding: 5px;
+}
+
+.index_airports:hover {
+  background: url('../img/airports_hover.png') no-repeat center center;
+  background-size: 70px 70px;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
 .index_dip {
   text-decoration: none;
   background: url('../img/dipswitch.png') no-repeat center center;

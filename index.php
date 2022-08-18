@@ -45,6 +45,9 @@
 					<a class="col-md-2 index_aircraft image_my" href="aircrafts.php">
 						<p class="text-center index_kafelek">Samoloty</p>
 					</a>
+					<a class="col-md-2 index_airports image_my" href="airports.php">
+						<p class="text-center index_kafelek">Lotniska</p>
+					</a>
 				</div>
 
 				<hr>
