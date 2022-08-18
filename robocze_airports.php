@@ -15,10 +15,10 @@
 
 <form method="post">
 
-  <input class="form-control" list="ICAOs" name="ICAOs" id="typ" placeholder="Wpisz ICAO, żeby wyszukać...">
-  <datalist id="ICAOs">
+	<input class="form-control" list="ICAOs" name="ICAOs" id="typ" placeholder="Wpisz ICAO, żeby wyszukać...">
+	<datalist id="ICAOs">
 
-    <?php
+		<?php
 
     include ('php/config.php');
 
@@ -27,70 +27,63 @@
     if ( $base->connect_error )
     die("MYSQL Error: ".$base->connect_error);
 
-    $sql0 = "SELECT * FROM airports";
+		$airport = $_POST["ICAOs"];
 
-    $result0 = $base->query($sql0);
+    $airports_ICAO_sql = "SELECT * FROM airports";
+    $airports_ICAO = $base->query($airports_ICAO_sql);
 
-    if (mysqli_num_rows($result0) == 0) {
-       echo "<script type='text/javascript'>alert('Nie znaleziono lotniska')</script>";
-    } else {
+		$airports_sql = "SELECT * FROM airports WHERE (ICAO LIKE '%$airport')";
+		$airports = $base->query($airports_sql);
 
-    if ( !$result0 ){
+		$runways_sql = "SELECT * FROM runways WHERE (ICAO LIKE '%$airport')";
+		$runways = $base->query($runways_sql);
+
+		$freq_sql = "SELECT * FROM freq WHERE (ICAO LIKE '%$airport')";
+		$freq = $base->query($freq_sql);
+
+
+
+    if (!$airports_ICAO){
     die("MYSQL Error: error");
     }
 
-    while($row0 = $result0->fetch_assoc() ) {
+    while($row_ICAO = $airports_ICAO->fetch_assoc()) {
 
-    	echo "<option value='{$row0['ICAO']}'></option>";
+    	echo "<option value='{$row_ICAO['ICAO']}'></option>";
     	}
 
     echo "</datalist>";
-    }
+
 
     ?>
 
 
-      <input name="searchbutton" id="button" type="submit" value="Wyszukaj">
+		<input name="searchbutton" id="button" type="submit" value="Wyszukaj">
 </form>
 
 
 <?php
-
-
-
-include ('php/config.php');
-
 if (isset($_POST['searchbutton'])) {
 
-$airport = $_POST["ICAOs"];
-
-if (!empty($airport)){
-
-$base = new mysqli ($host, $user, $password, $db);
-$base->set_charset("utf8");
-if ( $base->connect_error )
-die("MYSQL Error: ".$base->connect_error);
-
-$sql = "SELECT * FROM airports WHERE (ICAO LIKE '%$airport')";
-
-$result = $base->query($sql);
-
-if (mysqli_num_rows($result) == 0) {
+if (mysqli_num_rows($airports) == 0) {
    echo "<script type='text/javascript'>alert('Nie znaleziono lotniska')</script>";
 } else {
 
 echo "<table style='width: 700px; border: 1px solid; border-collapse: collapse;'><tr><th>ICAO</th><th>Town</th><th>Name</th><th>Elevation</th></tr>";
-if ( !$result ){
+if (!$airports){
 die("MYSQL Error: error");
 }
 
-while($row = $result->fetch_assoc() ) {
+while($row_airports = $airports->fetch_assoc()) {
 
-	echo "<tr style='text-align: center;'><td>{$row['ICAO']}</td><td>{$row['town']}</td><td>{$row['name']}</td><td>{$row['elevation']} ft</td></tr>";
+	echo "<tr style='text-align: center;'><td>{$row_airports['ICAO']}</td><td>{$row_airports['town']}</td><td>{$row_airports['name']}</td><td>{$row_airports['elevation']} ft</td></tr>";
+
+	$latitude = $row_airports['latitude'];
+	$longitude = $row_airports['longitude'];
+
 	}
 
 echo "</table>";
-}
 }
 }
 ?>
@@ -98,40 +91,20 @@ echo "</table>";
 <br />
 
 <?php
-
-include ('php/config.php');
-
 if (isset($_POST['searchbutton'])) {
+if (mysqli_num_rows($runways) != 0) {
 
-$airport = $_POST["ICAOs"];
-
-if (!empty($airport)){
-
-$base = new mysqli ($host, $user, $password, $db);
-$base->set_charset("utf8");
-if ( $base->connect_error )
-die("MYSQL Error: ".$base->connect_error);
-
-$sql2 = "SELECT * FROM runways WHERE (ICAO LIKE '%$airport')";
-
-$result2 = $base->query($sql2);
-
-if (mysqli_num_rows($result2) == 0) {
-   echo "<script type='text/javascript'>alert('Nie znaleziono lotniska')</script>";
-} else {
-
-  echo "<table style='width: 700px; border: 1px solid; border-collapse: collapse;'><tr><th>Pasy</th><th>HDG</th><th>Wysokości progów</th><th>Długość</th><th>Szerokość</th></tr>";
-if ( !$result2 ){
+  echo "<table style='width: 700px; border: 1px solid; border-collapse: collapse;'><tr><th>Pasy</th><th>True HDG</th><th>Wysokości progów</th><th>Długość</th><th>Szerokość</th></tr>";
+if ( !$runways ){
 die("MYSQL Error: error");
 }
 
-while($row2 = $result2->fetch_assoc() ) {
+while($row_runways = $runways->fetch_assoc() ) {
 
-  echo "<tr style='text-align: center;'><td>{$row2['rwy1']} / {$row2['rwy2']}</td><td>{$row2['rwy1_hdg']} / {$row2['rwy2_hdg']}</td><td>{$row2['rwy1_elevation']} / {$row2['rwy2_elevation']}ft</td><td>{$row2['lenght']}ft</td><td>{$row2['width']}ft</td></tr>";
+  echo "<tr style='text-align: center;'><td>{$row_runways['rwy1']} / {$row_runways['rwy2']}</td><td>{$row_runways['rwy1_hdg']} / {$row_runways['rwy2_hdg']}</td><td>{$row_runways['rwy1_elevation']} / {$row_runways['rwy2_elevation']}ft</td><td>{$row_runways['lenght']}ft</td><td>{$row_runways['width']}ft</td></tr>";
 	}
 
 echo "</table>";
-}
 }
 }
 ?>
@@ -139,40 +112,50 @@ echo "</table>";
 <br />
 
 <?php
-
-include ('php/config.php');
-
 if (isset($_POST['searchbutton'])) {
 
-$airport = $_POST["ICAOs"];
-
-if (!empty($airport)){
-
-$base = new mysqli ($host, $user, $password, $db);
-$base->set_charset("utf8");
-if ( $base->connect_error )
-die("MYSQL Error: ".$base->connect_error);
-
-$sql3 = "SELECT * FROM freq WHERE (ICAO LIKE '%$airport')";
-
-$result3 = $base->query($sql3);
-
-if (mysqli_num_rows($result3) == 0) {
-   echo "<script type='text/javascript'>alert('Nie znaleziono lotniska')</script>";
-} else {
+if (mysqli_num_rows($freq) != 0) {
 
   echo "<table style='width: 700px; border: 1px solid; border-collapse: collapse;'><tr><th>Typ</th><th>Opis</th><th>Częstotliwość</th></tr>";
-if ( !$result3 ){
+if ( !$freq ){
 die("MYSQL Error: error");
 }
 
-while($row3 = $result3->fetch_assoc() ) {
+while($row_freq = $freq->fetch_assoc() ) {
 
-  echo "<tr style='text-align: center;'><td>{$row3['type']}</td><td>{$row3['description']}</td><td>{$row3['mhz']} MHz</td></tr>";
+  echo "<tr style='text-align: center;'><td>{$row_freq['type']}</td><td>{$row_freq['description']}</td><td>{$row_freq['mhz']} MHz</td></tr>";
 	}
 
 echo "</table>";
 }
 }
+?>
+
+<br />
+
+<?php
+if (isset($_POST['searchbutton'])) {
+	if (mysqli_num_rows($airports) != 0){
+
+	echo "
+
+<iframe style='pointer-events: none; border-radius: 5px;' src='https://metar-taf.com/embed/{$airport}?bg_color=0057a3&layout=landscape'
+frameBorder='0' width='366'
+height='255' scrolling='no'></iframe>
+";
 }
+}
+?>
+
+<br />
+
+<?php
+
+if (isset($_POST['searchbutton'])) {
+	if (mysqli_num_rows($airports) != 0){
+
+		echo "<a href='https://skyvector.com/?ll={$latitude},{$longitude}&chart=301&zoom=2' target='blank'>SkyVector</a>";
+}
+}
+
 ?>
