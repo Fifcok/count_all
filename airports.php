@@ -103,7 +103,12 @@
 							$elevation_meters_round = round($elevation_meters, 0);
 							echo "<b>Wysokość:</b> {$row_airports['elevation']} ft ({$elevation_meters_round} m) <br /><br />";
 
-							echo "<b>Koordynaty:</b> {$row_airports['latitude']}, {$row_airports['longitude']} <br />";
+							$latitude = $row_airports['latitude'];
+							$latitude_round = round($latitude, 4);
+							$longitude = $row_airports['longitude'];
+							$longitude_round = round($longitude, 4);
+
+							echo "<b>Koordynaty:</b> {$longitude_round}, {$latitude_round} <br />";
 							echo "<a href='https://skyvector.com/?ll={$row_airports['latitude']},{$row_airports['longitude']}&chart=301&zoom=2' target='blank' class='link_my'>SkyVector</a><br />";
 							}
 						}
@@ -117,7 +122,7 @@
 						if (mysqli_num_rows($runways) != 0) {
 							echo "<div class='row'>";
 							echo "<h3>Informacje o pasach</h3>";
-						  echo "<table style='text-align: center; width: 100%;'><tr><th>Pasy</th><th>True HDG</th><th>Wysokości progów</th><th>Rozmiar pasa</th></tr>";
+						  echo "<table style='text-align: center; width: 100%;'><tr><th>Pasy</th><th>True HDG</th><th>Wysokości progów</th><th>Rozmiar pasa</th><th>Slope</th></tr>";
 						if ( !$runways ){
 						die("MYSQL Error: error");
 						}
@@ -129,7 +134,17 @@
 						$width	= $row_runways['width'] * "0.3048";
 						$width_round = round($width, 0);
 
-						  echo "<tr style='text-align: center;'><td>{$row_runways['rwy1']} / {$row_runways['rwy2']}</td><td>{$row_runways['rwy1_hdg']} / {$row_runways['rwy2_hdg']}</td><td>{$row_runways['rwy1_elevation']} / {$row_runways['rwy2_elevation']}ft</td><td>{$row_runways['lenght']} x {$row_runways['width']}ft ({$lenght_round} x {$width_round} m)</td></tr>";
+						$rwy1_elevation = $row_runways['rwy1_elevation'];
+						$rwy2_elevation = $row_runways['rwy2_elevation'];
+						$rwy_lenght = $row_runways['lenght'];
+
+						$slope = (($rwy2_elevation - $rwy1_elevation) / $rwy_lenght) * "100";
+						$slope_round = round($slope, 2);
+
+						$slope2 = (($rwy1_elevation - $rwy2_elevation) / $rwy_lenght) * "100";
+						$slope2_round = round($slope2, 2);
+
+						  echo "<tr style='text-align: center;'><td>{$row_runways['rwy1']} / {$row_runways['rwy2']}</td><td>{$row_runways['rwy1_hdg']} / {$row_runways['rwy2_hdg']}</td><td>{$row_runways['rwy1_elevation']} / {$row_runways['rwy2_elevation']}ft</td><td>{$row_runways['lenght']} x {$row_runways['width']}ft ({$lenght_round} x {$width_round} m)</td><td>{$slope_round} / {$slope2_round}</td></tr>";
 							}
 
 						echo "</table>";
@@ -142,7 +157,7 @@
 						if (isset($_POST['searchbutton'])) {
 							if (mysqli_num_rows($airports) != 0){
 
-							echo "<iframe style='margin: 20px 0px; pointer-events: none; border-radius: 10px;' src='https://metar-taf.com/embed/{$airport}?bg_color=0057a3&layout=landscape'
+							echo "<iframe style='margin: 20px 0px; pointer-events: none; border-radius: 10px;' src='https://metar-taf.com/embed/{$airport}?bg_color=cdcdcd&layout=landscape'
 						frameBorder='0' width='100%' height='255' scrolling='no'></iframe>";
 						}
 						}
