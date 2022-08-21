@@ -38,6 +38,7 @@
 								<?php
 
 					    include ('php/config.php');
+							require ('php/simple_html_dom.php');
 
 					    $base = new mysqli ($host, $user, $password, $db);
 					    $base->set_charset("utf8");
@@ -102,6 +103,10 @@
 							$elevation_meters = $row_airports['elevation'] * "0.3048";
 							$elevation_meters_round = round($elevation_meters, 0);
 							echo "<b>Wysokość:</b> {$row_airports['elevation']} ft ({$elevation_meters_round} m) <br /><br />";
+
+							$html = file_get_html ("https://www.aviationweather.gov/metar/data?ids={$airport}");
+							echo "<p>{$html->find("code",0)->innertext}</p>";
+
 
 							$latitude = $row_airports['latitude'];
 							$latitude_round = round($latitude, 4);
