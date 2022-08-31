@@ -25,6 +25,9 @@
 
 		<div class="row">
 			<div class="col-md-10">
+				<?php
+					include ('php/swieta.php');
+				 ?>
 				<div class="row">
 					<h2 class="text-center">Awiacja</h2>
 				</div>
@@ -59,6 +62,9 @@
 				<div class="row">
 					<a class="col-md-2 index_prad image_my" href="prad_fotowoltaika.php">
 						<p class="text-center index_kafelek">Fotowoltaika</p>
+					</a>
+					<a class="col-md-2 index_moc image_my" href="pobor_mocy.php">
+						<p class="text-center index_kafelek">Pobór mocy</p>
 					</a>
 				</div>
 

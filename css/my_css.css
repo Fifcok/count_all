@@ -99,6 +99,19 @@
   background-color: rgba(0, 0, 0, 0.2);
 }
 
+.index_moc {
+  text-decoration: none;
+  background: url('../img/moc.png') no-repeat center center;
+  background-size: 55px 47px;
+  padding: 5px;
+}
+
+.index_moc:hover {
+  background: url('../img/moc_hover.png') no-repeat center center;
+  background-size: 55px 47px;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
 .index_airports {
   text-decoration: none;
   background: url('../img/airports.png') no-repeat center center;

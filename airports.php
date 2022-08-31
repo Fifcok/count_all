@@ -50,13 +50,13 @@
 					    $airports_ICAO_sql = "SELECT * FROM airports";
 					    $airports_ICAO = $base->query($airports_ICAO_sql);
 
-							$airports_sql = "SELECT * FROM airports WHERE (ICAO LIKE '%$airport')";
+							$airports_sql = "SELECT * FROM airports WHERE (ICAO LIKE '$airport')";
 							$airports = $base->query($airports_sql);
 
-							$runways_sql = "SELECT * FROM runways WHERE (ICAO LIKE '%$airport')";
+							$runways_sql = "SELECT * FROM runways WHERE (ICAO LIKE '$airport')";
 							$runways = $base->query($runways_sql);
 
-							$freq_sql = "SELECT * FROM freq WHERE (ICAO LIKE '%$airport')";
+							$freq_sql = "SELECT * FROM freq WHERE (ICAO LIKE '$airport')";
 							$freq = $base->query($freq_sql);
 
 

@@ -28,6 +28,7 @@ echo "	<nav class='navbar navbar-light'>
 
 		<ul class='dropdown-menu' aria-labelledby='dropdownMenuButton1'>
 			<li><a class='dropdown-item' href='prad_fotowoltaika.php'>Prąd - fotowoltaika</a></li>
+			<li><a class='dropdown-item' href='pobor_mocy.php'>Prąd - pobór mocy</a></li>
 		</ul>
 	</div>
 
