@@ -39,6 +39,9 @@
 						<div class="row" id="calc_form">
 							Czas pracy
 							<input type="number" name="b" id="b" placeholder="np. 15" required />
+						</div>
+
+						<div class="row" id="calc_form">
 							<select id="c">
 								<option value="sekundy">sekundy</option>
 								<option value="minuty">minuty</option>
@@ -83,7 +86,7 @@
 						Moc urządzenia: <b>1200 W</b><br />
 						Czas pracy: <b>29 dni</b><br /><br />
 						<b>1200 W</b> * 24 * <b>29</b> = 835000 W<br /><br />
-						835000 W / 1000 = <b>835 KwH</b><br /><br />
+						835000 W / 1000 = <b>835 kWh</b><br /><br />
 						Naszym wynikiem jest pobór mocy równy <b>835 kWh</b> podczas pracy urządzenia o mocy 1200 W przez 29 dni.<br /><br /><br /><br />
 
 					</div>
