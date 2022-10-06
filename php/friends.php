@@ -7,7 +7,7 @@ echo "<div class='col-md-12 text-center'>OkiemDrona
   <a href='https://vms.top-sky.eu/' target='_blank'><img class='col-md-12 image_my' src='img/topsky.png'></a>
 </div>
 
-<div class='col-md-12 text-center'>Yotube channel
+<div class='col-md-12 text-center'>Youtube channel
   <a href='https://www.youtube.com/c/topski87' target='_blank'><img class='col-md-12 image_my' src='img/topsky_yt.png'></a>
 </div>
 

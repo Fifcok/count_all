@@ -51,7 +51,7 @@ function initPic(a) {
 
     p = a.picnum.value;
     p /= 1;
-    p > max ? (alert("Wartośćh przekracza zakres 511"), a.picnum.focus(), a.picnum.select()) : showPic(p);
+    p > max ? (alert("Wartość przekracza zakres 511"), a.picnum.focus(), a.picnum.select()) : showPic(p);
     return !1
   }
 }
