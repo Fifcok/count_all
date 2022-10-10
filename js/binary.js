@@ -46,7 +46,7 @@ function initPic(a) {
   var range = document.getElementById('range').value;
   if (range < 0 || range > 511)
   {
-    alert("Wartośćh przekracza zakres (0 - 511)");
+    alert("Wartość przekracza zakres (0 - 511)");
   } else {
 
     p = a.picnum.value;
