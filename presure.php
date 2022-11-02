@@ -58,11 +58,11 @@
 					<br /><br /><br /><br />
 
 					<div class="col-md-9">
-						Ciśnienie z QNH na inHg i odwrotnie przeliczane jest w celu ustawienia ciśnieniomiwerza w samolocie.<br />
+						Ciśnienie z QNH na inHg i odwrotnie przeliczane jest w celu ustawienia wysokościomierza w samolocie.<br />
 						Przykładem jest podawane na przykład w USA ciśnienie w słupku rtęci, a samolot może ustawić tylko ciśnienie w QHN.<br />
 						Mając podane ciśnienie QNH wystarczy pomnożyć je przez <b>0.02953</b> w celu otrzymania wartości w inHg.<br />
 						Posiadając ciśnienie w inHg należy pomnożyć przez <b>33.865</b>, aby uzyskać wartość w QNH.<br />
-						
+
 						<hr>
 						<b>Przykład:</b><br /><br />
 						Ciśnienie QNH: <b>1024</b><br />
