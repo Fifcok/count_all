@@ -151,6 +151,19 @@
   background-color: rgba(0, 0, 0, 0.2);
 }
 
+.index_presure {
+  text-decoration: none;
+  background: url('../img/presure.png') no-repeat center center;
+  background-size: 47px 47px;
+  padding: 5px;
+}
+
+.index_presure:hover {
+  background: url('../img/presure_hover.png') no-repeat center center;
+  background-size: 47px 47px;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
 .index_kafelek {
   color: black;
   font-size: 20px;

@@ -18,6 +18,7 @@ echo "	<nav class='navbar navbar-light'>
 			<li><a class='dropdown-item' href='fuel_weight.php'>Paliwo Jet A</a></li>
 			<li><a class='dropdown-item' href='aircrafts.php'>Samoloty</a></li>
 			<li><a class='dropdown-item' href='airports.php'>Lotniska</a></li>
+			<li><a class='dropdown-item' href='presure.php'>Ciśnienie</a></li>
 		</ul>
 	</div>
 

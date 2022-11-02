@@ -52,6 +52,12 @@
 						<p class="text-center index_kafelek">Lotniska</p>
 					</a>
 				</div>
+					<br />
+				<div class="row">
+					<a class="col-md-2 index_presure image_my" href="presure.php">
+						<p class="text-center index_kafelek">Ciśnienie</p>
+					</a>
+				</div>
 
 				<hr>
 
