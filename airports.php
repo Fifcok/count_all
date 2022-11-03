@@ -113,7 +113,7 @@
 							$longitude = $row_airports['longitude'];
 							$longitude_round = round($longitude, 4);
 
-							echo "<b>Koordynaty:</b> {$longitude_round}, {$latitude_round} <br />";
+							echo "<b>Koordynaty:</b> {$latitude_round}, {$longitude_round} <br />";
 							echo "<a href='https://skyvector.com/?ll={$row_airports['latitude']},{$row_airports['longitude']}&chart=301&zoom=2' target='blank' class='link_my'>SkyVector</a><br />";
 							}
 						}
