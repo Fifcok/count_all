@@ -28,6 +28,9 @@
 				<?php
 					include ('php/swieta.php');
 				 ?>
+
+				 <hr>
+
 				<div class="row">
 					<h2 class="text-center">Awiacja</h2>
 				</div>
