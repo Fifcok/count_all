@@ -115,7 +115,7 @@
 						</div>
 
 						<div class="row" id="calc_form">
-							<input type="button" onclick="aircraft(this.innerHTML)" value="Pokaż" style="width: 100px;">
+							<input id="myBtn" type="button" onclick="aircraft(this.innerHTML)" value="Pokaż" style="width: 100px;">
 						</div>
 
 						<div class="row" id="calc_form">
@@ -138,6 +138,17 @@
 							<br /><br /><br /><br />
 						</div>
 					</form>
+
+					<script>
+						var input1 = document.getElementById("typ");
+
+						input1.addEventListener("keypress", function(event) {
+							if (event.key === "Enter") {
+								event.preventDefault();
+								document.getElementById("myBtn").click();
+							}
+						});
+					</script>
 
 					<br /><br /><br /><br />
 

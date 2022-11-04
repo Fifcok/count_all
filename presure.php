@@ -33,7 +33,7 @@
 						<h3>Przelicznik ciśnienia</h3>
 						<div class="row" id="calc_form">
 							Przeliczana wartość
-							<input onfocus="this.value=''" type="number" name="a" id="a" placeholder="Wpisz wartość" required />
+							<input step="0.01" onfocus="this.value=''" type="number" name="a" id="a" placeholder="Wpisz wartość" required />
 						</div>
 
 						<div class="row" id="calc_form">
@@ -44,7 +44,7 @@
 						</div>
 
 						<div class="row" id="calc_form">
-							<button type="button" onclick="presure(this.innerHTML)" style="width: 100px;">Licz</button>
+							<button id="myBtn" type="button" onclick="presure(this.innerHTML)" style="width: 100px;">Licz</button>
 						</div>
 
 						<div class="row" id="calc_form">
@@ -54,6 +54,17 @@
 							</h2>
 						</div>
 					</form>
+
+					<script>
+						var input1 = document.getElementById("a");
+
+						input1.addEventListener("keypress", function(event) {
+							if (event.key === "Enter") {
+								event.preventDefault();
+								document.getElementById("myBtn").click();
+							}
+						});
+					</script>
 
 					<br /><br /><br /><br />
 

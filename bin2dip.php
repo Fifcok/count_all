@@ -40,9 +40,20 @@
 							</div>
 
 							<div class="row" id="calc_form">
-								<input name="showpic" value="Pokaż" onclick="initPic(this.form)" type="button" class="showpic" style="width: 100px;">
+								<input id="myBtn" name="showpic" value="Pokaż" onclick="initPic(this.form)" type="button" class="showpic" style="width: 100px;">
 							</div>
 						</form>
+
+						<script>
+							var input1 = document.getElementById("range");
+
+							input1.addEventListener("keypress", function(event) {
+								if (event.key === "Enter") {
+									event.preventDefault();
+									document.getElementById("myBtn").click();
+								}
+							});
+						</script>
 
 						<br />
 

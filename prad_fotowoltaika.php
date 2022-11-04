@@ -42,7 +42,7 @@
 						</div>
 
 						<div class="row" id="calc_form">
-							<button type="button" onclick="fotowoltaika(this.innerHTML)" style="width: 100px;">Licz</button>
+							<button id="myBtn" type="button" onclick="fotowoltaika(this.innerHTML)" style="width: 100px;">Licz</button>
 						</div>
 
 						<div class="row" id="calc_form">
@@ -52,6 +52,25 @@
 							</h2>
 						</div>
 					</form>
+
+					<script>
+						var input1 = document.getElementById("a");
+						var input2 = document.getElementById("b");
+
+						input1.addEventListener("keypress", function(event) {
+							if (event.key === "Enter") {
+								event.preventDefault();
+								document.getElementById("myBtn").click();
+							}
+						});
+
+						input2.addEventListener("keypress", function(event) {
+							if (event.key === "Enter") {
+								event.preventDefault();
+								document.getElementById("myBtn").click();
+							}
+						});
+					</script>
 
 					<div class="col-md-9">
 						Aby obliczyć, czy w bilansie wpuszczonego prądu do sieci wyprodukowanego przez instalację fotowoltaiczną potrzebne są [kWh] wpuszczone do sieci oraz pobrane z sieci.

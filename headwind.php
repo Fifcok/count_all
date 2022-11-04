@@ -1,5 +1,6 @@
 <!DOCTYPE HTML>
 <html lang="pl-PL">
+
 <head>
 	<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
 	<script src='https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js'></script>
@@ -45,7 +46,7 @@
 						</div>
 
 						<div class="row" id="calc_form">
-							<button type="button" onclick="headwindcalc(this.innerHTML)" style="width: 100px;">Licz</button>
+							<button id="myBtn" type="button" onclick="headwindcalc(this.innerHTML)" style="width: 100px;">Licz</button>
 						</div>
 
 						<div class="row" id="calc_form">
@@ -55,6 +56,33 @@
 							</h2>
 						</div>
 					</form>
+
+					<script>
+						var input1 = document.getElementById("a");
+						var input2 = document.getElementById("b");
+						var input3 = document.getElementById("c");
+
+						input1.addEventListener("keypress", function(event) {
+							if (event.key === "Enter") {
+								event.preventDefault();
+								document.getElementById("myBtn").click();
+							}
+						});
+
+						input2.addEventListener("keypress", function(event) {
+							if (event.key === "Enter") {
+								event.preventDefault();
+								document.getElementById("myBtn").click();
+							}
+						});
+
+						input3.addEventListener("keypress", function(event) {
+							if (event.key === "Enter") {
+								event.preventDefault();
+								document.getElementById("myBtn").click();
+							}
+						});
+					</script>
 
 					<div class="col-md-9">
 						<b>Headwind / Tailwind</b> potrzebny do startu samolotu obliczany jest w bardzo prosty sposób. <br />

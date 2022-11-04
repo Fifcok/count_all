@@ -41,7 +41,7 @@
 						</div>
 
 						<div class="row" id="calc_form">
-							<button type="button" onclick="isa(this.innerHTML)" style="width: 100px;">Licz</button>
+							<button id="myBtn" type="button" onclick="isa(this.innerHTML)" style="width: 100px;">Licz</button>
 						</div>
 
 						<div class="row" id="calc_form">
@@ -55,6 +55,25 @@
 							</h2>
 						</div>
 					</form>
+
+					<script>
+						var input1 = document.getElementById("a");
+						var input2 = document.getElementById("b");
+
+						input1.addEventListener("keypress", function(event) {
+							if (event.key === "Enter") {
+								event.preventDefault();
+								document.getElementById("myBtn").click();
+							}
+						});
+
+						input2.addEventListener("keypress", function(event) {
+							if (event.key === "Enter") {
+								event.preventDefault();
+								document.getElementById("myBtn").click();
+							}
+						});
+					</script>
 
 					<div class="col-md-9">
 						<b>ISA</b>, czyli Międzynarodowa Atmosfera Standardowa (ISA) to statyczny model atmosfery przedstawiający zmiany ciśnienia,
