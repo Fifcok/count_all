@@ -14,11 +14,11 @@
 
 	<style>
 		.checkwx-link {
-	        text-decoration: none;
+	    text-decoration: none;
 			color: black;
 	    }
 		.checkwx-link:hover {
-	        text-decoration: none;
+	    text-decoration: none;
 			color: black;
 	    }
 		</style>
