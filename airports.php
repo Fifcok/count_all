@@ -11,6 +11,18 @@
 	<title>countALL Airports</title>
 	<link rel="icon" type="image/x-icon" href="img/favicon.ico">
 	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6199309078483888" crossorigin="anonymous"></script>
+
+	<style>
+		.checkwx-link {
+	  	text-decoration: none;
+			color: black;
+	    }
+		.checkwx-link:hover {
+	   	text-decoration: none;
+			color: black;
+	    }
+		</style>
+
 </head>
 
 <body class="body_my">
