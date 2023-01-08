@@ -7,6 +7,7 @@
 	<script src="bootstrap/js/bootstrap.min.js"></script>
 	<link rel="stylesheet" href="css/my_css.css">
 	<script src="js/script.js"></script>
+	<script src="https://api.checkwx.com/widget?key=c50819abd0ed42e6aa3987626b" type="text/javascript"></script>
 	<title>countALL Airports</title>
 	<link rel="icon" type="image/x-icon" href="img/favicon.ico">
 	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6199309078483888" crossorigin="anonymous"></script>
@@ -104,9 +105,7 @@
 							$elevation_meters_round = round($elevation_meters, 0);
 							echo "<b>Wysokość:</b> {$row_airports['elevation']} ft ({$elevation_meters_round} m) <br /><br />";
 
-							$html = file_get_html ("https://www.aviationweather.gov/metar/data?ids={$airport}");
-							echo "<p>{$html->find("code",0)->innertext}</p>";
-
+							echo "<div class='checkwx-container' data-type='METAR' data-station='{$airport}'></div>";
 
 							$latitude = $row_airports['latitude'];
 							$latitude_round = round($latitude, 4);
