@@ -4,7 +4,7 @@ echo "<div class='col-md-12 text-center'>OkiemDrona
 </div>
 
 <div class='col-md-12 text-center'>Virtual Airline
-  <a href='https://vms.top-sky.eu/' target='_blank'><img class='col-md-12 image_my' src='img/topsky.png'></a>
+  <a href='https://newsky.app/airline/tky/info' target='_blank'><img class='col-md-12 image_my' src='img/topsky.png'></a>
 </div>
 
 <div class='col-md-12 text-center'>Youtube channel
