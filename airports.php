@@ -7,22 +7,9 @@
 	<script src="bootstrap/js/bootstrap.min.js"></script>
 	<link rel="stylesheet" href="css/my_css.css">
 	<script src="js/script.js"></script>
-	<script src="https://api.checkwx.com/widget?key=c50819abd0ed42e6aa3987626b" type="text/javascript"></script>
 	<title>countALL Airports</title>
 	<link rel="icon" type="image/x-icon" href="img/favicon.ico">
 	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6199309078483888" crossorigin="anonymous"></script>
-
-	<style>
-		.checkwx-link {
-	    text-decoration: none;
-			color: black;
-	    }
-		.checkwx-link:hover {
-	    text-decoration: none;
-			color: black;
-	    }
-		</style>
-
 </head>
 
 <body class="body_my">
@@ -58,7 +45,9 @@
 					    if ( $base->connect_error )
 					    die("MYSQL Error: ".$base->connect_error);
 
-							$airport = $_POST["ICAOs"];
+							if (isset($_POST["ICAOs"])){
+									$airport = $_POST["ICAOs"];
+							}
 
 					    $airports_ICAO_sql = "SELECT * FROM airports";
 					    $airports_ICAO = $base->query($airports_ICAO_sql);
@@ -71,8 +60,6 @@
 
 							$freq_sql = "SELECT * FROM freq WHERE (ICAO LIKE '$airport')";
 							$freq = $base->query($freq_sql);
-
-
 
 					    if (!$airports_ICAO){
 					    die("MYSQL Error: error");
@@ -117,8 +104,14 @@
 							$elevation_meters_round = round($elevation_meters, 0);
 							echo "<b>Wysokość:</b> {$row_airports['elevation']} ft ({$elevation_meters_round} m) <br /><br />";
 
-							echo "<div class='checkwx-container' data-type='METAR' data-station='{$airport}'></div>";
-
+							$ch = curl_init("https://aviationweather.gov/adds/dataserver_current/httpparam?dataSource=metars&requestType=retrieve&format=xml&hoursBeforeNow=1&mostRecent=true&stationString={$airport}");
+								/* set options */
+							curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+							curl_setopt($ch, CURLOPT_HEADER, 0);
+								/* execute request */
+							$output = curl_exec($ch);
+								/* close cURL resource */
+							curl_close($ch);
 							$latitude = $row_airports['latitude'];
 							$latitude_round = round($latitude, 4);
 							$longitude = $row_airports['longitude'];
