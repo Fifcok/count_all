@@ -46,11 +46,11 @@
 					    die("MYSQL Error: ".$base->connect_error);
 
 							if (isset($_POST["ICAOs"])){
-									$airport = $_POST["ICAOs"];
+								$airport = $_POST["ICAOs"];
 							}
 
-					    $airports_ICAO_sql = "SELECT * FROM airports";
-					    $airports_ICAO = $base->query($airports_ICAO_sql);
+							$airports_ICAO_sql = "SELECT * FROM airports";
+							$airports_ICAO = $base->query($airports_ICAO_sql);
 
 							$airports_sql = "SELECT * FROM airports WHERE (ICAO LIKE '$airport')";
 							$airports = $base->query($airports_sql);
@@ -60,6 +60,8 @@
 
 							$freq_sql = "SELECT * FROM freq WHERE (ICAO LIKE '$airport')";
 							$freq = $base->query($freq_sql);
+
+
 
 					    if (!$airports_ICAO){
 					    die("MYSQL Error: error");
@@ -105,13 +107,20 @@
 							echo "<b>Wysokość:</b> {$row_airports['elevation']} ft ({$elevation_meters_round} m) <br /><br />";
 
 							$ch = curl_init("https://aviationweather.gov/adds/dataserver_current/httpparam?dataSource=metars&requestType=retrieve&format=xml&hoursBeforeNow=1&mostRecent=true&stationString={$airport}");
-								/* set options */
+							/* set options */
 							curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 							curl_setopt($ch, CURLOPT_HEADER, 0);
-								/* execute request */
+							/* execute request */
 							$output = curl_exec($ch);
-								/* close cURL resource */
+							/* close cURL resource */
 							curl_close($ch);
+
+							/* print output */
+							$xml = simplexml_load_string($output);
+							$json = json_encode($xml);
+							$array = json_decode($json,TRUE);
+
+							echo "<p>{$array['data']['METAR']['raw_text']}</p>";
 							$latitude = $row_airports['latitude'];
 							$latitude_round = round($latitude, 4);
 							$longitude = $row_airports['longitude'];
@@ -165,9 +174,9 @@
 						<?php
 						if (isset($_POST['searchbutton'])) {
 							if (mysqli_num_rows($airports) != 0){
-
+								
 							echo "<iframe style='margin: 20px 0px; pointer-events: none; border-radius: 10px;' src='https://metar-taf.com/embed/{$airport}?bg_color=cdcdcd&layout=landscape'
-						frameBorder='0' width='100%' height='255' scrolling='no'></iframe>";
+							frameBorder='0' width='100%' height='255' scrolling='no'></iframe>";
 						}
 						}
 						?>

@@ -19,6 +19,8 @@ echo "	<nav class='navbar navbar-light'>
 			<li><a class='dropdown-item' href='aircrafts.php'>Samoloty</a></li>
 			<li><a class='dropdown-item' href='airports.php'>Lotniska</a></li>
 			<li><a class='dropdown-item' href='presure.php'>Ciśnienie</a></li>
+			<li><a class='dropdown-item' href='speed.php'>Prędkość</a></li>
+			<li><a class='dropdown-item' href='height.php'>Wysokość</a></li>
 		</ul>
 	</div>
 

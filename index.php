@@ -60,6 +60,12 @@
 					<a class="col-md-2 index_presure image_my" href="presure.php">
 						<p class="text-center index_kafelek">Ciśnienie</p>
 					</a>
+					<a class="col-md-2 index_speed image_my" href="speed.php">
+						<p class="text-center index_kafelek">Prędkość</p>
+					</a>
+					<a class="col-md-2 index_height image_my" href="height.php">
+						<p class="text-center index_kafelek">Wysokość</p>
+					</a>
 				</div>
 
 				<hr>

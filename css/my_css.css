@@ -164,6 +164,32 @@
   background-color: rgba(0, 0, 0, 0.2);
 }
 
+.index_speed {
+  text-decoration: none;
+  background: url('../img/speed.png') no-repeat center center;
+  background-size: 60px 60px;
+  padding: 5px;
+}
+
+.index_speed:hover {
+  background: url('../img/speed_hover.png') no-repeat center center;
+  background-size: 60px 60px;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.index_height {
+  text-decoration: none;
+  background: url('../img/height.png') no-repeat center center;
+  background-size: 47px 47px;
+  padding: 5px;
+}
+
+.index_height:hover {
+  background: url('../img/height_hover.png') no-repeat center center;
+  background-size: 47px 47px;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
 .index_kafelek {
   color: black;
   font-size: 20px;
@@ -176,4 +202,29 @@
 .one_line {
   display: inline-block;
   margin: 2px;
+}
+
+.index_topsky {
+  text-decoration: none;
+  background-size: auto 100%;
+  background-repeat: no-repeat;
+  background-position: center center;
+  padding: 5px;
+  height: 200px;
+}
+
+.image_my_topsky {
+  padding: 5px;
+  transition: transform .5s;
+}
+
+.image_my_topsky:hover {
+  transform: scale(1.1);
+  filter: none;
+}
+
+.index_kafelek_topsky {
+  color: white;
+  font-size: 20px;
+  text-shadow: 0 0 10px black;
 }
