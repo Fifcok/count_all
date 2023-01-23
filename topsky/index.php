@@ -16,12 +16,12 @@
 	<div class="wrapper container wrapper_container_my">
 		<div class="row">
 			<div class='col-md-2 d-flex justify-content-center align-items-center'>
-				<a href='index.php'><img src='../img/logo.png' width='147px' height='146px'></a>
+				<a href='../index.php'><img src='../img/logo.png' width='147px' height='146px'></a>
 			</div>
 			<div class="col-md-10 d-flex flex-row-reverse">
 				<nav class='navbar navbar-light'>
 					<div class='dropdown' style='padding: 5px;'>
-						<a class='btn btn-secondary' href='index.php' role='button' id='dropdownMenuButton1'
+						<a class='btn btn-secondary' href='../index.php' role='button' id='dropdownMenuButton1'
 							data-toggle='dropdown' aria-haspopup='true' aria-expanded='false' style="background-image: url('../img/1px-nav.png'); background-repeat: repeat; padding: 10px;
 			width: auto;">
 							Home
@@ -43,7 +43,7 @@
 							<li><a class='dropdown-item' href='../airports.php'>Lotniska</a></li>
 							<li><a class='dropdown-item' href='../presure.php'>Ciśnienie</a></li>
 							<li><a class='dropdown-item' href='../speed.php'>Prędkość</a></li>
-							<li><a class='dropdown-item' href='height.php'>Wysokość</a></li>
+							<li><a class='dropdown-item' href='../height.php'>Wysokość</a></li>
 						</ul>
 					</div>
 
@@ -308,7 +308,7 @@
 						<p class="text-center index_kafelek_topsky">A320 CFM Chrome by Darek</p>
 					</a>
 					<a class="col-md-4 index_topsky image_my_topsky" target='_blank'
-						href="https://drive.google.com/file/d/1opr_AGYbxDByYx3ESGyFSR8Zc76WwRSS/view"
+						href="https://drive.google.com/file/d/1gEQKNlSY9lcwkxmIwcuvROoBk3zsF32U/view"
 						style="background-image:url('img/a320-fenix-santa.png')">
 						<p class="text-center index_kafelek_topsky">A320 CFM Santa Chrome by Crystal_eye</p>
 					</a>
@@ -482,6 +482,10 @@
 				<div class='col-md-12 text-center'>Virtual Airline
 					<a href='https://newsky.app/airline/tky/info' target='_blank'><img class='col-md-12 image_my'
 							src='../img/topsky.png'></a>
+				</div>
+
+				<div class='col-md-12 text-center'>Topsky Liveries
+  					<a href='https://countall.com.pl/topsky/'><img class='col-md-12 image_my' src='../img/liveries.png'></a>
 				</div>
 
 				<div class='col-md-12 text-center'>Youtube channel
