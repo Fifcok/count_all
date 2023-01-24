@@ -1,4 +1,4 @@
-<!DOCTYPE HTML>
+﻿<!DOCTYPE HTML>
 <html lang="pl-PL">
 
 <head>
@@ -85,6 +85,22 @@
 
 		<div class="row">
 			<div class="col-md-10">
+
+				
+				<div class="row">
+					<h2 class="text-center">B737-600 PMDG</h2>
+				</div>
+
+				<div class="row">
+					<a class="col-md-4 index_topsky image_my_topsky" target='_blank'
+						href="https://drive.google.com/file/d/1XT_moz9XzjwRcx6DjNsHXuh0NT301Tjx/view"
+						style="background-image:url('img/b736-pax.png')">
+						<p class="text-center index_kafelek_topsky">B737-600 PAX by Darek</p>
+					</a>
+				</div>
+
+				<hr>
+
 
 				<div class="row">
 					<h2 class="text-center">B737-700 PMDG</h2>
@@ -396,7 +412,8 @@
 						style="background-image:url('img/cj4.png')">
 						<p class="text-center index_kafelek_topsky">CJ4 by Adrian_Fifcik</p>
 					</a>
-					<a class="col-md-4 index_topsky image_my_topsky" target='_blank' href="#"
+					<a class="col-md-4 index_topsky image_my_topsky" target='_blank' 
+						href="https://drive.google.com/file/d/1Cs0K8noUF-PuSZpEOuh2Oyqf6iziTkfp/view"
 						style="background-image:url('img/cj4-chrome.png')">
 						<p class="text-center index_kafelek_topsky">CJ4 Chrome by Adrian_Fifcik</p>
 					</a>
