@@ -175,8 +175,8 @@
 						if (isset($_POST['searchbutton'])) {
 							if (mysqli_num_rows($airports) != 0){
 								
-							echo "<iframe style='margin: 20px 0px; pointer-events: none; border-radius: 10px;' src='https://metar-taf.com/embed/{$airport}?bg_color=cdcdcd&layout=landscape'
-							frameBorder='0' width='100%' height='255' scrolling='no'></iframe>";
+							//echo "<a href='https://metar-taf.com/{$airport}' target='_blank' id='metartaf-p9ufrdCe' style='background-color: #cdcdcd; margin-top: 10px; font-size:18px; font-weight:500; color:#000; width:100%; height:255px; display:block'>METAR Kraków John Paul II International Airport</a>";
+							//echo "<script async defer crossorigin='anonymous' src='https://metar-taf.com/embed-js/{$airport}?bg_color=cdcdcd&layout=landscape&target=p9ufrdCe'></script>";
 						}
 						}
 						?>
