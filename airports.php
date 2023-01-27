@@ -106,7 +106,7 @@
 
 							$elevation_meters = $row_airports['elevation'] * "0.3048";
 							$elevation_meters_round = round($elevation_meters, 0);
-							echo "<b>Wysokość:</b> {$row_airports['elevation']} ft ({$elevation_meters_round} m) <br /><br />";
+							echo "<hr><b>Wysokość:</b> {$row_airports['elevation']} ft ({$elevation_meters_round} m)";
 
 							$ch = curl_init("https://aviationweather.gov/adds/dataserver_current/httpparam?dataSource=metars&requestType=retrieve&format=xml&hoursBeforeNow=1&mostRecent=true&stationString={$airport}");
 							/* set options */
@@ -122,20 +122,31 @@
 							$json = json_encode($xml);
 							$array = json_decode($json,TRUE);
 
-							echo "<p>{$array['data']['METAR']['raw_text']}</p>";
+							echo "<hr><p>{$array['data']['METAR']['raw_text']}</p>";
 							$latitude = $row_airports['latitude'];
 							$latitude_round = round($latitude, 4);
 							$longitude = $row_airports['longitude'];
 							$longitude_round = round($longitude, 4);
 
-							echo "<b>Koordynaty:</b> {$latitude_round}, {$longitude_round} <br />";
+
+
+						if (isset($_POST['searchbutton'])) {
+							if (mysqli_num_rows($airports) != 0){
+								
+							echo "<a href='https://metar-taf.com/{$airport}' target='_blank' id='metartaf-p9ufrdCe' style='background-color: #cdcdcd; margin-top: 10px; font-size:18px; font-weight:500; color:#000; width:100%; height:255px; display:block'>METAR Kraków John Paul II International Airport</a>";
+							echo "<script async defer crossorigin='anonymous' src='https://metar-taf.com/embed-js/{$airport}?bg_color=cdcdcd&layout=landscape&target=p9ufrdCe'></script>";
+						}
+						}
+						
+
+							echo "<hr><b>Koordynaty:</b> {$latitude_round}, {$longitude_round} <br />";
 							echo "<a href='https://skyvector.com/?ll={$row_airports['latitude']},{$row_airports['longitude']}&chart=301&zoom=2' target='blank' class='link_my'>SkyVector</a><br />";
 							}
 						}
 						}
 						?>
 
-						<br />
+						<hr>
 
 						<?php
 						if (isset($_POST['searchbutton'])) {
@@ -175,19 +186,9 @@
 
 						<?php
 						if (isset($_POST['searchbutton'])) {
-							if (mysqli_num_rows($airports) != 0){
-								
-							echo "<a href='https://metar-taf.com/{$airport}' target='_blank' id='metartaf-p9ufrdCe' style='background-color: #cdcdcd; margin-top: 10px; font-size:18px; font-weight:500; color:#000; width:100%; height:255px; display:block'>METAR Kraków John Paul II International Airport</a>";
-							echo "<script async defer crossorigin='anonymous' src='https://metar-taf.com/embed-js/{$airport}?bg_color=cdcdcd&layout=landscape&target=p9ufrdCe'></script>";
-						}
-						}
-						?>
-
-						<?php
-						if (isset($_POST['searchbutton'])) {
 
 						if (mysqli_num_rows($freq) != 0) {
-						echo "<h3>Radio</h3>";
+						echo "<hr><h3>Radio</h3>";
 						if ( !$freq ){
 						die("MYSQL Error: error");
 						}
