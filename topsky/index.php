@@ -268,14 +268,14 @@
 				<hr>
 
 				<div class="row">
-					<h2 class="text-center">A320 FBW</h2>
+					<h2 class="text-center">A320neo FBW</h2>
 				</div>
 
 				<div class="row">
 					<a class="col-md-4 index_topsky image_my_topsky" target='_blank'
 						href="https://drive.google.com/file/d/1gmRopq49r4uG3M4AHlvuBn3_hRoUF4nL/view"
 						style="background-image:url('img/a320-pax.png')">
-						<p class="text-center index_kafelek_topsky">A320 PAX by Marcin Rymujący</p>
+						<p class="text-center index_kafelek_topsky">A32N PAX by Marcin Rymujący</p>
 					</a>
 				</div>
 

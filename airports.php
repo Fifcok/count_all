@@ -4,6 +4,9 @@
 <head>
 	<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
 	<script src='https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js'></script>
+	<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+ 	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.css" />
 	<script src="bootstrap/js/bootstrap.min.js"></script>
 	<link rel="stylesheet" href="css/my_css.css">
 	<script src="js/script.js"></script>
@@ -32,8 +35,15 @@
 						<h3>Lotniska</h3>
 
 						<div class="row" id="calc_form">
-							<input onfocus="this.value=''" class="form-control" list="ICAOs" name="ICAOs" id="typ" placeholder="Wpisz ICAO, żeby wyszukać...">
-							<datalist id="ICAOs">
+							<input onfocus="this.value=''" type="text" class="form-control" name="ICAOs" id="typ" placeholder="Wpisz ICAO, żeby wyszukać...">
+							
+							<script type="text/javascript">
+								$(function() {
+									$( "#typ" ).autocomplete({
+									source: '../php/ajax-db-search.php',
+									});
+								});
+							</script>
 
 								<?php
 
@@ -66,14 +76,6 @@
 					    if (!$airports_ICAO){
 					    die("MYSQL Error: error");
 					    }
-
-					    while($row_ICAO = $airports_ICAO->fetch_assoc()) {
-
-					    	echo "<option value='{$row_ICAO['ICAO']}'></option>";
-					    	}
-
-					    echo "</datalist>";
-
 					    ?>
 						</diV>
 
@@ -175,8 +177,8 @@
 						if (isset($_POST['searchbutton'])) {
 							if (mysqli_num_rows($airports) != 0){
 								
-							//echo "<a href='https://metar-taf.com/{$airport}' target='_blank' id='metartaf-p9ufrdCe' style='background-color: #cdcdcd; margin-top: 10px; font-size:18px; font-weight:500; color:#000; width:100%; height:255px; display:block'>METAR Kraków John Paul II International Airport</a>";
-							//echo "<script async defer crossorigin='anonymous' src='https://metar-taf.com/embed-js/{$airport}?bg_color=cdcdcd&layout=landscape&target=p9ufrdCe'></script>";
+							echo "<a href='https://metar-taf.com/{$airport}' target='_blank' id='metartaf-p9ufrdCe' style='background-color: #cdcdcd; margin-top: 10px; font-size:18px; font-weight:500; color:#000; width:100%; height:255px; display:block'>METAR Kraków John Paul II International Airport</a>";
+							echo "<script async defer crossorigin='anonymous' src='https://metar-taf.com/embed-js/{$airport}?bg_color=cdcdcd&layout=landscape&target=p9ufrdCe'></script>";
 						}
 						}
 						?>
