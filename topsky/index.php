@@ -86,7 +86,7 @@
 		<div class="row">
 			<div class="col-md-10">
 
-				
+
 				<div class="row">
 					<h2 class="text-center">B737-600 PMDG</h2>
 				</div>
@@ -122,6 +122,15 @@
 						style="background-image:url(img/b737-bbj1.png)">
 						<p class="text-center index_kafelek_topsky">B737-700 BBJ 1 by Darek</p>
 					</a>
+				</div>
+				<br />
+				<div class="row">
+					<a class="col-md-4 index_topsky image_my_topsky" target='_blank'
+						href="https://drive.google.com/file/d/1DP6TqWXfdteyK5NY4rx_S8slO1ibVZtf/view"
+						style="background-image:url('img/b737-cargo-new.png')">
+						<p class="text-center index_kafelek_topsky">B737-700 CARGO NEW by Darek</p>
+					</a>
+
 				</div>
 
 				<hr>
@@ -175,7 +184,8 @@
 					<a class="col-md-4 index_topsky image_my_topsky" target='_blank'
 						href="https://drive.google.com/file/d/1KJ3cncAerr9Y405hOgLQspkOxjiDLC01/view"
 						style="background-image:url('img/b738-pax-magenta.png')">
-					<p class="text-center index_kafelek_topsky">B737-800 PAX Magenta by Darek</p> </a>
+						<p class="text-center index_kafelek_topsky">B737-800 PAX Magenta by Darek</p>
+					</a>
 				</div>
 
 				<hr>
@@ -438,7 +448,7 @@
 						style="background-image:url('img/cj4.png')">
 						<p class="text-center index_kafelek_topsky">CJ4 by Adrian_Fifcik</p>
 					</a>
-					<a class="col-md-4 index_topsky image_my_topsky" target='_blank' 
+					<a class="col-md-4 index_topsky image_my_topsky" target='_blank'
 						href="https://drive.google.com/file/d/1Cs0K8noUF-PuSZpEOuh2Oyqf6iziTkfp/view"
 						style="background-image:url('img/cj4-chrome.png')">
 						<p class="text-center index_kafelek_topsky">CJ4 Chrome by Adrian_Fifcik</p>
@@ -528,7 +538,8 @@
 				</div>
 
 				<div class='col-md-12 text-center'>Topsky Liveries
-  					<a href='https://countall.com.pl/topsky/'><img class='col-md-12 image_my' src='../img/liveries.png'></a>
+					<a href='https://countall.com.pl/topsky/'><img class='col-md-12 image_my'
+							src='../img/liveries.png'></a>
 				</div>
 
 				<div class='col-md-12 text-center'>Youtube channel
