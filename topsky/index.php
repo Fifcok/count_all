@@ -172,6 +172,10 @@
 						style="background-image:url('img/b738-cargo-bdsf-new.png')">
 						<p class="text-center index_kafelek_topsky">B737-800 CARGO BDSF NEW by Darek</p>
 					</a>
+					<a class="col-md-4 index_topsky image_my_topsky" target='_blank'
+						href="https://drive.google.com/file/d/1KJ3cncAerr9Y405hOgLQspkOxjiDLC01/view"
+						style="background-image:url('img/b738-pax-magenta.png')">
+					<p class="text-center index_kafelek_topsky">B737-800 PAX Magenta by Darek</p> </a>
 				</div>
 
 				<hr>
