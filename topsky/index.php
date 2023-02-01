@@ -256,6 +256,20 @@
 				<hr>
 
 				<div class="row">
+					<h2 class="text-center">B787-10</h2>
+				</div>
+
+				<div class="row">
+					<a class="col-md-4 index_topsky image_my_topsky" target='_blank'
+						href="https://drive.google.com/file/d/14ovDrSM3zQLGeUN5OoMlE0Nl7l55Vv9H/view"
+						style="background-image:url('img/b787.png')">
+						<p class="text-center index_kafelek_topsky">B7E7 Pax by Darek</p>
+					</a>
+				</div>
+
+				<hr>
+
+				<div class="row">
 					<h2 class="text-center">A310 IniBuilds</h2>
 				</div>
 
