@@ -17,11 +17,15 @@ include ('php/ZeverSolarInverter.php');
 			$zeverSolarInverter = new ZeverSolarInverter($ip);
 	
 			$inverter = $zeverSolarInverter->poll();
-	
+
 				$i = $inverter['Pac'];
 				$z = $inverter['TotalToday'];
+
+				echo $i;
+				echo $z;
+				
 								
-if (!empty($i)){
+if ($i >=0 AND !empty($i)){
 
 $base = new mysqli ($host2, $user, $password, $db);
 	$base->set_charset("utf8");
@@ -35,9 +39,7 @@ $base = new mysqli ($host2, $user, $password, $db);
 	mysqli_query($base, $sql2);
 	mysqli_query($base, $sql3);
 	mysqli_close($base);
-}
 
-if (!empty($i)){
 
 	$base = new mysqli ($host, $user, $password, $db);
 		$base->set_charset("utf8");
