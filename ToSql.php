@@ -5,7 +5,7 @@ require ('php/simple_html_dom.php');
 $timenow = time ();
 
 $date = (date("Y-m-d",$timenow));
-$time = (date("H:i:s",$timenow));
+$time = (strtotime(date("H:i:s",$timenow)))*1000;
 
 
 	include ('php/config.php');
@@ -33,7 +33,7 @@ $base = new mysqli ($host2, $user, $password, $db);
 	die("MYSQL Error: ".$base->connect_error);
 					
 	$sql = "INSERT INTO inwerter VALUES (id, '$date', '$time', '$i','$z')";
-	$sql2 = "UPDATE inwerter SET now = NULL WHERE now = ''";
+	$sql2 = "UPDATE inwerter SET y = NULL WHERE y = ''";
 	$sql3 = "UPDATE inwerter SET today = NULL WHERE today = ''";
 	mysqli_query($base, $sql);
 	mysqli_query($base, $sql2);
@@ -47,7 +47,7 @@ $base = new mysqli ($host2, $user, $password, $db);
 		die("MYSQL Error: ".$base->connect_error);
 						
 		$sql = "INSERT INTO inwerter VALUES (id, '$date', '$time', '$i','$z')";
-		$sql2 = "UPDATE inwerter SET now = NULL WHERE now = ''";
+		$sql2 = "UPDATE inwerter SET y = NULL WHERE y = ''";
 		$sql3 = "UPDATE inwerter SET today = NULL WHERE today = ''";
 		mysqli_query($base, $sql);
 		mysqli_query($base, $sql2);

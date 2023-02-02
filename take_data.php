@@ -4,7 +4,10 @@ require ('php/simple_html_dom.php');
 $timenow = time ();
 
 $date = (date("Y-m-d",$timenow));
+$time = (date("H:s:m",$timenow));
 echo $date;
+echo "<br />";
+echo $time;
 ?>
 
 <br /> <br />
@@ -35,10 +38,60 @@ $teraz_data = $_POST["callendar"];
 	$time_now = $base->query($sql);
 
 	while($row_time_now = $time_now->fetch_assoc()) {
-		echo "Aktualna produkcja: {$row_time_now['now']}W<br />";
+		echo "Aktualna produkcja: {$row_time_now['y']}W<br />";
 		echo "Dziś zostało wyprodukowane: {$row_time_now['today']}kWh<br />";
 
 	}
 }
 
+
+$sql5 = "SELECT x, y FROM inwerter WHERE data = '{$date}'";
+	$inverter = $base->query($sql5);
+
+	while($row_inverter = mysqli_fetch_assoc($inverter)) {
+
+		$inverter_table[] = $row_inverter;
+	  }
+
 ?>
+
+<!DOCTYPE HTML>
+<html>
+<head>
+<script>
+window.onload = function () {
+ 
+var chart = new CanvasJS.Chart("chartContainer", {
+	animationEnabled: true,
+	title:{
+		text: "Produkcja dzisiaj"
+	},
+	axisY: {
+		title: "Produkcja",
+		valueFormatString: "#",
+		suffix: "W"
+	},
+	axisX: {
+
+		valueFormatString: "HH:mm:ss",
+
+	},
+	data: [{
+		type: "area",
+		markerSize: 1,
+		xValueFormatString: "HH:mm:ss",
+		xValueType: "dateTime",
+		dataPoints: <?php echo json_encode($inverter_table, JSON_NUMERIC_CHECK); ?>
+	}]
+});
+ 
+chart.render();
+ 
+}
+</script>
+</head>
+<body>
+<div id="chartContainer" style="height: 370px; width: 100%;"></div>
+<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+</body>
+</html> 
