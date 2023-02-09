@@ -1,13 +1,22 @@
 <?php
 require ('php/simple_html_dom.php');
-  
+date_default_timezone_set('Europe/Warsaw'); 
 $timenow = time ();
 
 $date = (date("Y-m-d",$timenow));
-$time = (date("H:s:m",$timenow));
-echo $date;
-echo "<br />";
-echo $time;
+$time = (date("H:i:s",$timenow));
+
+echo "Dziś mamy: {$date} <br />";
+echo "Jest godzina: {$time} <br />";
+
+
+$latitude = 50.089418; 
+$longitude = 20.177092;
+$sunrise = date_sunrise($date, SUNFUNCS_RET_STRING, $latitude, $longitude);
+$sunset = date_sunset($date, SUNFUNCS_RET_STRING, $latitude, $longitude);
+
+echo "Wschód słońca: {$sunrise} <br />";
+echo "Zachód słońca: {$sunset} <br />";
 ?>
 
 <br /> <br />
@@ -28,30 +37,28 @@ $base = new mysqli ($host, $user, $password, $db);
 	if ( $base->connect_error )
 	die("MYSQL Error: ".$base->connect_error);
 		
-
 if (isset($_POST['searchbutton'])) {
 
 $teraz_data = $_POST["callendar"];
-			
+
 	$sql = "SELECT * FROM inwerter WHERE id = (SELECT max(id) FROM inwerter WHERE data = '{$teraz_data}')";
 
 	$time_now = $base->query($sql);
 
 	while($row_time_now = $time_now->fetch_assoc()) {
-		echo "Aktualna produkcja: {$row_time_now['y']}W<br />";
-		echo "Dziś zostało wyprodukowane: {$row_time_now['today']}kWh<br />";
+		echo "<h3>Aktualna produkcja: <b>{$row_time_now['y']}W</b><br />";
+		echo "Dziś zostało wyprodukowane: <b>{$row_time_now['today']}kWh</b></h3><br />";
 
 	}
-}
 
-
-$sql5 = "SELECT x, y FROM inwerter WHERE data = '{$date}'";
+$sql5 = "SELECT x, y FROM inwerter WHERE data = '{$teraz_data}'";
 	$inverter = $base->query($sql5);
 
 	while($row_inverter = mysqli_fetch_assoc($inverter)) {
 
 		$inverter_table[] = $row_inverter;
 	  }
+	}
 
 ?>
 
