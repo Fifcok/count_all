@@ -1,22 +1,42 @@
 <?php
 require ('php/simple_html_dom.php');
-date_default_timezone_set('Europe/Warsaw'); 
+
+include ('php/config.php');
+
+$base = new mysqli ($host, $user, $password, $db);
+	$base->set_charset("utf8");
+	if ( $base->connect_error )
+	die("MYSQL Error: ".$base->connect_error);
+
+date_default_timezone_set('Europe/Warsaw');
 $timenow = time ();
 
 $date = (date("Y-m-d",$timenow));
+$sunset_date = (date("m-d",$timenow));
 $time = (date("H:i:s",$timenow));
 
 echo "Dziś mamy: {$date} <br />";
 echo "Jest godzina: {$time} <br />";
 
 
-$latitude = 50.089418; 
-$longitude = 20.177092;
-$sunrise = date_sunrise($date, SUNFUNCS_RET_STRING, $latitude, $longitude);
-$sunset = date_sunset($date, SUNFUNCS_RET_STRING, $latitude, $longitude);
+$sql6 = "SELECT * FROM sun WHERE (date LIKE '$sunset_date')";
 
-echo "Wschód słońca: {$sunrise} <br />";
-echo "Zachód słońca: {$sunset} <br />";
+	$sunrise = $base->query($sql6);
+
+	while($sunrise_sunset = $sunrise->fetch_assoc()) {
+		echo "Wschód słońca: <b>{$sunrise_sunset['sunrise']}</b><br />";
+		echo "Zachód słońca: <b>{$sunrise_sunset['sunset']}</b><br />";
+	}
+	
+	
+$sql = "SELECT * FROM inwerter WHERE id = (SELECT max(id) FROM inwerter WHERE data = '{$date}')";
+
+	$time_now = $base->query($sql);
+
+	while($row_time_now = $time_now->fetch_assoc()) {
+		echo "<h3>Aktualna produkcja dzisiaj: <b>{$row_time_now['y']}W</b>";
+	}
+
 ?>
 
 <br /> <br />
@@ -30,24 +50,21 @@ echo "<input type='date' name='callendar' value='{$date}' min='2023-02-02' max='
 </form>
 
 <?php
-include ('php/config.php');
 
-$base = new mysqli ($host, $user, $password, $db);
-	$base->set_charset("utf8");
-	if ( $base->connect_error )
-	die("MYSQL Error: ".$base->connect_error);
+$i = 5;
 		
-if (isset($_POST['searchbutton'])) {
+if (($i == 5) || (isset($_POST['searchbutton']))) {
 
 $teraz_data = $_POST["callendar"];
 
-	$sql = "SELECT * FROM inwerter WHERE id = (SELECT max(id) FROM inwerter WHERE data = '{$teraz_data}')";
+$sql2 = "SELECT * FROM inwerter WHERE id = (SELECT max(id) FROM inwerter WHERE data = '{$teraz_data}')";
 
-	$time_now = $base->query($sql);
+	$time_now2 = $base->query($sql2);
 
-	while($row_time_now = $time_now->fetch_assoc()) {
-		echo "<h3>Aktualna produkcja: <b>{$row_time_now['y']}W</b><br />";
-		echo "Dziś zostało wyprodukowane: <b>{$row_time_now['today']}kWh</b></h3><br />";
+	while($row_time_now2 = $time_now2->fetch_assoc()) {
+
+
+		echo "{$teraz_data} zostało wyprodukowane: <b>{$row_time_now2['today']}kWh</b></h3><br />";
 
 	}
 
