@@ -50,12 +50,13 @@ echo "<input type='date' name='callendar' value='{$date}' min='2023-02-02' max='
 </form>
 
 <?php
-
-$i = 5;
 		
-if (($i == 5) || (isset($_POST['searchbutton']))) {
+$teraz_data = $date;
+
+if (isset($_POST['searchbutton'])) {
 
 $teraz_data = $_POST["callendar"];
+}
 
 $sql2 = "SELECT * FROM inwerter WHERE id = (SELECT max(id) FROM inwerter WHERE data = '{$teraz_data}')";
 
@@ -75,7 +76,7 @@ $sql5 = "SELECT x, y FROM inwerter WHERE data = '{$teraz_data}'";
 
 		$inverter_table[] = $row_inverter;
 	  }
-	}
+	
 
 ?>
 
