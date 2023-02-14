@@ -28,14 +28,28 @@ $sql6 = "SELECT * FROM sun WHERE (date LIKE '$sunset_date')";
 		echo "Zachód słońca: <b>{$sunrise_sunset['sunset']}</b><br />";
 	}
 	
+
+$time_int = (strtotime(date("H:i:s",$timenow)))*1000;
+
 	
 $sql = "SELECT * FROM inwerter WHERE id = (SELECT max(id) FROM inwerter WHERE data = '{$date}')";
 
 	$time_now = $base->query($sql);
 
 	while($row_time_now = $time_now->fetch_assoc()) {
-		echo "<h3>Aktualna produkcja dzisiaj: <b>{$row_time_now['y']}W</b>";
+		$time_database = $row_time_now['x'];
 	}
+
+if (($time_int - $time_database) > 100000 ){
+	echo "<h3>Aktualna produkcja: <b>0W</b>";
+}
+else {
+
+	$time_now_2 = $base->query($sql);
+	while($row_time_now_2 = $time_now_2->fetch_assoc()) {
+		echo "<h3>Aktualna produkcja: <b>{$row_time_now_2['y']}W</b>";
+	}
+}
 
 ?>
 
