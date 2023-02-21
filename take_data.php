@@ -57,7 +57,15 @@ else {
 <form method="post" id="calculator" class="col-md-3">
 
 <?php
-echo "<input type='date' name='callendar' value='{$date}' min='2023-02-02' max='{$date}'><br />";
+
+$date_temp = $date;
+
+if (isset($_POST['searchbutton'])) {
+
+$date = $_POST["callendar"];
+}
+
+echo "<input type='date' name='callendar' value='{$date}' min='2023-02-02' max='{$date_temp}'><br />";
 ?>
 
 	<input name="searchbutton" id="button" type="submit" value="Wyszukaj" style="width: 100px;">
