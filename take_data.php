@@ -98,7 +98,6 @@ $sql5 = "SELECT x, y FROM inwerter WHERE data = '{$teraz_data}'";
 
 		$inverter_table[] = $row_inverter;
 	  }
-	
 
 ?>
 
@@ -111,7 +110,16 @@ window.onload = function () {
 var chart = new CanvasJS.Chart("chartContainer", {
 	animationEnabled: true,
 	title:{
-		text: "Produkcja dzisiaj"
+		<?php 
+		$data2 = (date("Y-m-d",$timenow));
+			if ($teraz_data == $data2){
+			echo "text: 'Produkcja dzisiaj'";
+			}
+			else {
+				echo "text: 'Produkcja w dniu $teraz_data'";
+			}
+		?>
+
 	},
 	axisY: {
 		title: "Produkcja",
