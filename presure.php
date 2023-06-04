@@ -38,8 +38,9 @@
 
 						<div class="row" id="calc_form">
 							<select type="text" name="rodzaj" id="rodzaj">
-								<option value="QNH to inHg">QNH -> inHg</option>
-								<option value="inHg to QNH">inHg -> QNH</option>
+								<option value="QNH">QNH</option>
+								<option value="inHg">inHg</option>
+								<option value="mmHg">mmHg</option>
 							</select>
 						</div>
 
@@ -48,9 +49,10 @@
 						</div>
 
 						<div class="row" id="calc_form">
-							<p name="wynik" id="wynik"></p>
 							<h2>
-								<p name="result" id="result"></p>
+								<p name="result" id="result1"></p>
+								<p name="result" id="result2"></p>
+								<p name="result" id="result3"></p>
 							</h2>
 						</div>
 					</form>
@@ -69,10 +71,15 @@
 					<br /><br /><br /><br />
 
 					<div class="col-md-9">
-						Ciśnienie z QNH na inHg i odwrotnie przeliczane jest w celu ustawienia wysokościomierza w samolocie.<br />
-						Przykładem jest podawane na przykład w USA ciśnienie w słupku rtęci, a samolot może ustawić tylko ciśnienie w QHN.<br />
-						Mając podane ciśnienie QNH wystarczy pomnożyć je przez <b>0.02953</b> w celu otrzymania wartości w inHg.<br />
-						Posiadając ciśnienie w inHg należy pomnożyć przez <b>33.865</b>, aby uzyskać wartość w QNH.<br />
+						Ciśnienie z QNH / inHg / mmHg przeliczane jest w celu ustawienia wysokościomierza w samolocie.<br />
+						Przykładem jest podawane na przykład w USA ciśnienie w słupku rtęci, a samolot może ustawić tylko ciśnienie w QHN. Występuje rónież ciśnienie podawane
+						w minimetrach słupka rtęci (zazwyczaj samoloty radzieckiej konstrukcji)<br />
+						QNH -> inHg / <b>* 0.02953</b><br />
+						QHN -> mmHg / <b>* 0.75006</b><br />
+						inHg -> QNH / <b>* 33.865</b><br />
+						inHg -> mmHg / <b>* 25.39981</b><br />
+						mmHg -> QNH / <b>* 1.33323</b><br />
+						mmHg -> inHg / <b>* 0.03937</b><br />
 
 						<hr>
 						<b>Przykład:</b><br /><br />
